@@ -1,0 +1,14 @@
+{
+	"category" : "BaselineOfMultiValuedDictionary",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "BaselineOfMultiValuedDictionary",
+	"pools" : [
+		 ],
+	"super" : "BaselineOf",
+	"type" : "normal" }
