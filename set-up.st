@@ -5,7 +5,12 @@ Gofer it
   load.
 
 GTPlayBook
-	stashDirectory: '/home/vonbecmann/workspaces/multi-valued-dictionary/stash-cache/' asFileReference.
+   stashDirectory: '/home/vonbecmann/workspaces/multi-valued-dictionary/stash-cache/' asFileReference.
+
+Metacello new
+    baseline: 'MultiValuedDictionary';
+    repository: 'filetree:///home/vonbecmann/workspaces/multi-valued-dictionary/repository';
+    load.
 
 
 Smalltalk snapshot: true andQuit: true.
