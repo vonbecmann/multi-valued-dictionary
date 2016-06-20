@@ -1,3 +1,3 @@
 enumerating
 do: aBlock
-	^ dictionary do: aBlock
+	dictionary valuesDo: aBlock
