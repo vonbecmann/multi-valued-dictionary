@@ -1,3 +1,3 @@
 private
 privateAt: key put: anObject
-	(dictionary at: key ifAbsentPut: [ collectionClass new ]) add: anObject
+	dictionary at: key put: (collectionClass with: anObject)
