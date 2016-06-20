@@ -2,7 +2,9 @@
 	"class" : {
 		 },
 	"instance" : {
+		"anotherElementNotIn" : "BernardoContreras 6/20/2016 15:24",
 		"collectionWithoutNilElements" : "BernardoContreras 6/20/2016 12:58",
+		"elementNotIn" : "BernardoContreras 6/20/2016 15:24",
 		"empty" : "BernardoContreras 6/19/2016 21:05",
 		"nonEmpty" : "BernardoContreras 6/20/2016 12:59",
 		"sizeCollection" : "BernardoContreras 6/20/2016 12:59" } }

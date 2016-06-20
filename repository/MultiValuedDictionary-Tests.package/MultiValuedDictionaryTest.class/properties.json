@@ -2,6 +2,7 @@
 	"category" : "MultiValuedDictionary-Tests",
 	"classinstvars" : [
 		 ],
+	"classtraitcomposition" : "TIncludesTest classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "",
@@ -11,4 +12,5 @@
 	"pools" : [
 		 ],
 	"super" : "CollectionRootTest",
+	"traitcomposition" : "TIncludesTest",
 	"type" : "normal" }

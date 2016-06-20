@@ -2,5 +2,9 @@
 	"class" : {
 		"isAbstract" : "BernardoContreras 6/19/2016 20:58" },
 	"instance" : {
+		"anotherElementNotIn" : "BernardoContreras 6/20/2016 15:21",
 		"classToBeTested" : "BernardoContreras 6/19/2016 21:18",
+		"elementNotIn" : "BernardoContreras 6/20/2016 15:20",
+		"empty" : "BernardoContreras 6/20/2016 15:19",
+		"nonEmpty" : "BernardoContreras 6/20/2016 15:20",
 		"testNew" : "BernardoContreras 6/20/2016 12:39" } }
