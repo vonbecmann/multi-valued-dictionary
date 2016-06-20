@@ -2,15 +2,15 @@
 	"category" : "MultiValuedDictionary-Tests",
 	"classinstvars" : [
 		 ],
-	"classtraitcomposition" : "TIncludesTest classTrait",
+	"classtraitcomposition" : "TIncludesTest classTrait + TDictionaryAddingTest classTrait",
 	"classvars" : [
 		 ],
-	"commentStamp" : "",
+	"commentStamp" : "BernardoContreras 6/20/2016 16:33",
 	"instvars" : [
 		 ],
 	"name" : "MultiValuedDictionaryTest",
 	"pools" : [
 		 ],
 	"super" : "CollectionRootTest",
-	"traitcomposition" : "TIncludesTest",
+	"traitcomposition" : "TIncludesTest + (TDictionaryAddingTest - {#testAddAll. #testDeclareFrom})",
 	"type" : "normal" }
