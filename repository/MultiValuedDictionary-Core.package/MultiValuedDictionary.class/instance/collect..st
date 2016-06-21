@@ -5,6 +5,11 @@ collect: aBlock
 	collection."
 
 	| newCollection |
-	newCollection := self class dictionary: dictionary class collection: collectionClass.
-	self associationsDo: [ :each | newCollection add: each key -> (aBlock value: each value) ].
+	newCollection := self copyEmpty.
+	self
+		associationsDo: [ :eachAssociation | 
+			| newValues |
+			newValues := eachAssociation value collect: [ :eachValue | aBlock value: eachValue ].
+			newValues isEmpty
+				ifFalse: [ newCollection at: eachAssociation key putAll: newValues ] ].
 	^ newCollection

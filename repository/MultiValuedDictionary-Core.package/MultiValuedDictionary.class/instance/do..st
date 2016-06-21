@@ -1,3 +1,3 @@
 enumerating
 do: aBlock
-	dictionary valuesDo: aBlock
+	self valuesDo: aBlock

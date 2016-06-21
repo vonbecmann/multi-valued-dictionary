@@ -1,0 +1,3 @@
+requirements
+newEmptyDict
+	^ self subclassResponsibility

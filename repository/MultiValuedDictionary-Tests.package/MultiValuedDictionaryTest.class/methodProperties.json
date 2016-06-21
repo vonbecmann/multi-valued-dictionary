@@ -8,8 +8,11 @@
 		"classToBeTested" : "BernardoContreras 6/19/2016 21:18",
 		"elementNotIn" : "BernardoContreras 6/20/2016 15:20",
 		"empty" : "BernardoContreras 6/20/2016 15:19",
+		"emptyDict" : "BernardoContreras 6/20/2016 19:26",
+		"newEmptyDict" : "BernardoContreras 6/20/2016 19:26",
 		"nonEmpty" : "BernardoContreras 6/20/2016 15:20",
 		"nonEmptyDict" : "BernardoContreras 6/20/2016 16:03",
+		"nonEmptyDifferentFromNonEmptyDict" : "BernardoContreras 6/20/2016 19:34",
 		"testAddWithKeyNotIn" : "BernardoContreras 6/20/2016 16:33",
 		"testEquality" : "BernardoContreras 6/20/2016 17:05",
 		"testNew" : "BernardoContreras 6/20/2016 12:39" } }

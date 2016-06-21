@@ -3,11 +3,15 @@
 		 },
 	"instance" : {
 		"anotherElementNotIn" : "BernardoContreras 6/20/2016 15:24",
-		"associationWithKeyAlreadyInToAdd" : "BernardoContreras 6/20/2016 16:21",
+		"associationWithKeyAlreadyInToAdd" : "BernardoContreras 6/20/2016 20:45",
 		"associationWithKeyNotInToAdd" : "BernardoContreras 6/20/2016 16:21",
 		"collectionWithoutNilElements" : "BernardoContreras 6/20/2016 12:58",
 		"elementNotIn" : "BernardoContreras 6/20/2016 15:24",
 		"empty" : "BernardoContreras 6/19/2016 21:05",
-		"nonEmpty" : "BernardoContreras 6/20/2016 16:55",
-		"nonEmptyDict" : "BernardoContreras 6/20/2016 16:17",
+		"emptyDict" : "BernardoContreras 6/20/2016 19:29",
+		"newEmptyDict" : "BernardoContreras 6/20/2016 19:29",
+		"nonEmpty" : "BernardoContreras 6/20/2016 20:46",
+		"nonEmptyDict" : "BernardoContreras 6/20/2016 20:44",
+		"nonEmptyDifferentFromNonEmptyDict" : "BernardoContreras 6/20/2016 21:25",
+		"setUp" : "BernardoContreras 6/20/2016 20:44",
 		"sizeCollection" : "BernardoContreras 6/20/2016 12:59" } }
