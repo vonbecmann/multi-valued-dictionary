@@ -44,6 +44,7 @@
 		"initializeDictionary:collectionClass:" : "BernardoContreras 6/19/2016 21:06",
 		"inject:into:" : "BernardoContreras 6/19/2016 22:53",
 		"isCollection" : "BernardoContreras 6/20/2016 19:06",
+		"isDictionary" : "BernardoContreras 6/21/2016 20:06",
 		"isEmpty" : "BernardoContreras 6/19/2016 21:12",
 		"isEmptyOrNil" : "BernardoContreras 6/19/2016 21:27",
 		"isNotEmpty" : "BernardoContreras 6/19/2016 21:26",

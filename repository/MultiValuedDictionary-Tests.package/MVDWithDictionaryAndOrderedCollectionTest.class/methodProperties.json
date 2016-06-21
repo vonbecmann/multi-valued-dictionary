@@ -2,7 +2,10 @@
 	"class" : {
 		 },
 	"instance" : {
+		"aValue" : "BernardoContreras 6/21/2016 20:14",
+		"anIndex" : "BernardoContreras 6/21/2016 20:02",
 		"anotherElementNotIn" : "BernardoContreras 6/20/2016 15:24",
+		"anotherValue" : "BernardoContreras 6/21/2016 20:15",
 		"associationWithKeyAlreadyInToAdd" : "BernardoContreras 6/21/2016 18:26",
 		"associationWithKeyNotInToAdd" : "BernardoContreras 6/20/2016 16:21",
 		"collectionWithoutNilElements" : "BernardoContreras 6/20/2016 12:58",

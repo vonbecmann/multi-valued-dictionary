@@ -2,7 +2,7 @@
 	"category" : "MultiValuedDictionary-Tests",
 	"classinstvars" : [
 		 ],
-	"classtraitcomposition" : "TIncludesTest classTrait + TDictionaryAddingTest classTrait + TDictionaryComparingTest classTrait + TDictionaryCopyingTest classTrait + TDictionaryEnumeratingTest classTrait + TDictionaryRemovingTest classTrait",
+	"classtraitcomposition" : "TIncludesTest classTrait + TDictionaryAddingTest classTrait + TDictionaryComparingTest classTrait + TDictionaryCopyingTest classTrait + TDictionaryEnumeratingTest classTrait + TDictionaryRemovingTest classTrait + TPutBasicTest classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "BernardoContreras 6/20/2016 16:33",
@@ -12,5 +12,5 @@
 	"pools" : [
 		 ],
 	"super" : "CollectionRootTest",
-	"traitcomposition" : "TIncludesTest + (TDictionaryAddingTest - {#testAddAll. #testDeclareFrom}) + TDictionaryComparingTest + TDictionaryCopyingTest + TDictionaryEnumeratingTest + TDictionaryRemovingTest",
+	"traitcomposition" : "TIncludesTest + (TDictionaryAddingTest - {#testAddAll. #testDeclareFrom}) + TDictionaryComparingTest + TDictionaryCopyingTest + TDictionaryEnumeratingTest + TDictionaryRemovingTest + (TPutBasicTest - {#testAtPutOutOfBounds})",
 	"type" : "normal" }

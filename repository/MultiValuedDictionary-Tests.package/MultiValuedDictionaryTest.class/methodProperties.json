@@ -2,7 +2,10 @@
 	"class" : {
 		"isAbstract" : "BernardoContreras 6/19/2016 20:58" },
 	"instance" : {
+		"aValue" : "BernardoContreras 6/21/2016 19:48",
+		"anIndex" : "BernardoContreras 6/21/2016 19:48",
 		"anotherElementNotIn" : "BernardoContreras 6/20/2016 15:21",
+		"anotherValue" : "BernardoContreras 6/21/2016 19:48",
 		"associationWithKeyAlreadyInToAdd" : "BernardoContreras 6/20/2016 16:02",
 		"associationWithKeyNotInToAdd" : "BernardoContreras 6/20/2016 16:02",
 		"classToBeTested" : "BernardoContreras 6/19/2016 21:18",
@@ -15,5 +18,7 @@
 		"nonEmptyDict" : "BernardoContreras 6/20/2016 16:03",
 		"nonEmptyDifferentFromNonEmptyDict" : "BernardoContreras 6/20/2016 19:34",
 		"testAddWithKeyNotIn" : "BernardoContreras 6/20/2016 16:33",
+		"testAtPut" : "BernardoContreras 6/21/2016 20:14",
+		"testAtPutTwoValues" : "BernardoContreras 6/21/2016 20:14",
 		"testEquality" : "BernardoContreras 6/20/2016 17:05",
 		"testNew" : "BernardoContreras 6/20/2016 12:39" } }
