@@ -6,8 +6,5 @@ associationsSelect: aBlock
 
 	| newCollection |
 	newCollection := self copyEmpty.
-	self
-		associationsDo: [ :each | 
-			(aBlock value: each)
-				ifTrue: [ newCollection add: each ] ].
+	self associationsDo: [ :each | (aBlock value: each) ifTrue: [ newCollection privateAdd: each ] ].
 	^ newCollection
