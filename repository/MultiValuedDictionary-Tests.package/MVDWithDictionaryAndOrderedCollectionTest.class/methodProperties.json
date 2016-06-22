@@ -15,10 +15,13 @@
 		"elementToAdd" : "BernardoContreras 6/22/2016 16:30",
 		"empty" : "BernardoContreras 6/19/2016 21:05",
 		"emptyDict" : "BernardoContreras 6/20/2016 19:29",
+		"keyNotInNonEmpty" : "BernardoContreras 6/22/2016 16:55",
 		"keyNotInNonEmptyDict" : "BernardoContreras 6/21/2016 18:04",
 		"newEmptyDict" : "BernardoContreras 6/20/2016 19:29",
 		"nonEmpty" : "BernardoContreras 6/20/2016 20:46",
 		"nonEmptyDict" : "BernardoContreras 6/20/2016 20:44",
 		"nonEmptyDifferentFromNonEmptyDict" : "BernardoContreras 6/20/2016 21:25",
+		"nonEmptyWithCopyNonIdentical" : "BernardoContreras 6/22/2016 16:59",
 		"setUp" : "BernardoContreras 6/21/2016 18:25",
-		"sizeCollection" : "BernardoContreras 6/20/2016 12:59" } }
+		"sizeCollection" : "BernardoContreras 6/20/2016 12:59",
+		"valueNotInNonEmpty" : "BernardoContreras 6/22/2016 16:52" } }

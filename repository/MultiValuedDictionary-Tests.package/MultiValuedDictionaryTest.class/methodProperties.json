@@ -15,13 +15,16 @@
 		"elementToAdd" : "BernardoContreras 6/22/2016 00:03",
 		"empty" : "BernardoContreras 6/20/2016 15:19",
 		"emptyDict" : "BernardoContreras 6/20/2016 19:26",
+		"keyNotInNonEmpty" : "BernardoContreras 6/22/2016 16:48",
 		"keyNotInNonEmptyDict" : "BernardoContreras 6/21/2016 18:01",
 		"newEmptyDict" : "BernardoContreras 6/20/2016 19:26",
 		"nonEmpty" : "BernardoContreras 6/20/2016 15:20",
 		"nonEmptyDict" : "BernardoContreras 6/20/2016 16:03",
 		"nonEmptyDifferentFromNonEmptyDict" : "BernardoContreras 6/20/2016 19:34",
+		"nonEmptyWithCopyNonIdentical" : "BernardoContreras 6/22/2016 16:57",
 		"testAddWithKeyNotIn" : "BernardoContreras 6/20/2016 16:33",
 		"testAtPut" : "BernardoContreras 6/21/2016 20:14",
 		"testAtPutTwoValues" : "BernardoContreras 6/21/2016 20:14",
 		"testEquality" : "BernardoContreras 6/20/2016 17:05",
-		"testNew" : "BernardoContreras 6/20/2016 12:39" } }
+		"testNew" : "BernardoContreras 6/20/2016 12:39",
+		"valueNotInNonEmpty" : "BernardoContreras 6/22/2016 16:49" } }
