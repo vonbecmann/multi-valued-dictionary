@@ -1,6 +1,9 @@
 adding
 add: anAssociation
-	anAssociation value isCollection
-		ifTrue: [ self privateAt: anAssociation key putAll: anAssociation value ]
-		ifFalse: [ self privateAt: anAssociation key put: anAssociation value ].
+	self
+		basicprivateAt: anAssociation key
+		put:
+			(anAssociation value isCollection
+				ifTrue: [ collectionClass withAll: anAssociation value ]
+				ifFalse: [ collectionClass with: anAssociation value ]).
 	^ anAssociation
