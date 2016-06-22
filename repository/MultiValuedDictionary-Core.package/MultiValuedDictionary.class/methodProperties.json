@@ -33,6 +33,7 @@
 		"errorEmptyCollection" : "BernardoContreras 6/19/2016 21:59",
 		"errorKeyNotFound:" : "BernardoContreras 6/21/2016 18:13",
 		"errorNotFound:" : "BernardoContreras 6/19/2016 22:57",
+		"hash" : "BernardoContreras 6/21/2016 20:27",
 		"identityIncludes:" : "BernardoContreras 6/20/2016 15:41",
 		"ifEmpty:" : "BernardoContreras 6/19/2016 21:29",
 		"ifEmpty:ifNotEmpty:" : "BernardoContreras 6/19/2016 23:58",
@@ -66,7 +67,7 @@
 		"select:" : "BernardoContreras 6/20/2016 20:34",
 		"select:thenCollect:" : "BernardoContreras 6/19/2016 23:08",
 		"select:thenDo:" : "BernardoContreras 6/19/2016 23:09",
-		"size" : "BernardoContreras 6/20/2016 20:02",
+		"size" : "BernardoContreras 6/21/2016 21:06",
 		"sumNumbers:" : "BernardoContreras 6/19/2016 22:52",
 		"values" : "BernardoContreras 6/20/2016 19:45",
 		"valuesDo:" : "BernardoContreras 6/20/2016 19:50" } }
