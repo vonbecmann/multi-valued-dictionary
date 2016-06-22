@@ -9,5 +9,5 @@ select: aBlock
 			| newValues |
 			newValues := eachAssociation value select: [ :eachValue | aBlock value: eachValue ].
 			newValues isEmpty
-				ifFalse: [ newCollection at: eachAssociation key putAll: newValues ] ].
+				ifFalse: [ newCollection basicprivateAt: eachAssociation key put: newValues ] ].
 	^ newCollection
