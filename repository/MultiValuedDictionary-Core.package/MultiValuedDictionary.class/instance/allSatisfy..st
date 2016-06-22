@@ -4,8 +4,5 @@ allSatisfy: aBlock
 	If aBlock returns false for any element return false.
 	Otherwise return true."
 
-	self
-		do: [ :each | 
-			(aBlock value: each)
-				ifFalse: [ ^ false ] ].
+	self valuesDo: [ :each | (aBlock value: each) ifFalse: [ ^ false ] ].
 	^ true
