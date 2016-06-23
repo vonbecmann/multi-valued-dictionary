@@ -14,6 +14,6 @@ collect: aBlock
 					newValues := collectionClass new.
 					association value do: [ :eachValue | newValues add: (aBlock value: eachValue) ].
 					newValues isEmpty
-						ifFalse: [ newCollection basicprivateAt: association key put: newValues ] ]
-				ifFalse: [ newCollection basicprivateAt: association key put: (aBlock value: association value) ] ].
+						ifFalse: [ newCollection privateAt: association key put: newValues ] ]
+				ifFalse: [ newCollection privateAt: association key put: (aBlock value: association value) ] ].
 	^ newCollection

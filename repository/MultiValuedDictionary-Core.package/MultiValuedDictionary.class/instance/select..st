@@ -14,8 +14,8 @@ select: aBlock
 							(aBlock value: eachValue)
 								ifTrue: [ newValues add: eachValue ] ].
 					newValues isEmpty
-						ifFalse: [ newCollection basicprivateAt: association key put: newValues ] ]
+						ifFalse: [ newCollection privateAt: association key put: newValues ] ]
 				ifFalse: [ 
 					(aBlock value: association value)
-						ifTrue: [ newCollection basicprivateAt: association key put: association value ] ] ].
+						ifTrue: [ newCollection privateAt: association key put: association value ] ] ].
 	^ newCollection
