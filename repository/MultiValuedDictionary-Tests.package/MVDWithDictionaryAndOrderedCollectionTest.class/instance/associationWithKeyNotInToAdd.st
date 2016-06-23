@@ -1,3 +1,3 @@
 requirement
 associationWithKeyNotInToAdd
-	^ #z -> (OrderedCollection with: 666)
+	^ #z -> 666

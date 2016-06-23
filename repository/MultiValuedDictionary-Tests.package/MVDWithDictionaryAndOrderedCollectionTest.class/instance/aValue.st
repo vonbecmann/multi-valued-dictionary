@@ -1,3 +1,3 @@
 requirements
 aValue
-	^ OrderedCollection with: 37
+	^ 37

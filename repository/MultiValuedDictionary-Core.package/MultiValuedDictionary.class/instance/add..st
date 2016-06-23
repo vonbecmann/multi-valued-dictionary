@@ -5,5 +5,5 @@ add: anAssociation
 		put:
 			(anAssociation value isCollection
 				ifTrue: [ collectionClass withAll: anAssociation value ]
-				ifFalse: [ collectionClass with: anAssociation value ]).
+				ifFalse: [ anAssociation value ]).
 	^ anAssociation

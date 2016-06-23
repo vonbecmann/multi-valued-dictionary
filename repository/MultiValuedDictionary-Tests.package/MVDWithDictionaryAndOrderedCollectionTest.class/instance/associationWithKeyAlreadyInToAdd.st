@@ -1,3 +1,3 @@
 requirement
 associationWithKeyAlreadyInToAdd
-	^ #e -> (OrderedCollection withAll: #(11))
+	^ #e -> 11

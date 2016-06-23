@@ -1,7 +1,7 @@
 test - comparing
 testEquality
 	| nonEmptyDict2 |
-	nonEmptyDict2 := self empty.
-	self nonEmpty keysAndValuesDo: [ :key :values | nonEmptyDict2 at: key putAll: values ].
+	nonEmptyDict2 := self emptyDict.
+	self nonEmpty keysAndValuesDo: [ :key :value | nonEmptyDict2 at: key put: value ].
 
 	self assert: self nonEmptyDict = nonEmptyDict2
