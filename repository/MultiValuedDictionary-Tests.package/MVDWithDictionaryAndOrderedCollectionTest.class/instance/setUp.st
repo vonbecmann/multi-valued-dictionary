@@ -6,4 +6,5 @@ setUp
 		add: #c -> {4 . 5};
 		add: #d -> {6 . 7};
 		add: #e -> 8;
-		yourself
+		yourself.
+	duplicatedElement := 2.5

@@ -2,7 +2,7 @@
 	"category" : "MultiValuedDictionary-Tests",
 	"classinstvars" : [
 		 ],
-	"classtraitcomposition" : "TIncludesTest classTrait + TDictionaryAddingTest classTrait + TDictionaryComparingTest classTrait + TDictionaryCopyingTest classTrait + TDictionaryEnumeratingTest classTrait + TDictionaryRemovingTest classTrait + TPutBasicTest classTrait + TStructuralEqualityTest classTrait + TCopyTest classTrait + TDictionaryIncludesWithIdentityCheckTest classTrait + TDictionaryValueAccessTest classTrait + TDictionaryKeysValuesAssociationsAccess classTrait + TDictionaryAssociationAccessTest classTrait + TPrintTest classTrait + TAsStringCommaAndDelimiterTest classTrait",
+	"classtraitcomposition" : "TIncludesTest classTrait + TDictionaryAddingTest classTrait + TDictionaryComparingTest classTrait + TDictionaryCopyingTest classTrait + TDictionaryEnumeratingTest classTrait + TDictionaryRemovingTest classTrait + TPutBasicTest classTrait + TStructuralEqualityTest classTrait + TCopyTest classTrait + TDictionaryIncludesWithIdentityCheckTest classTrait + TDictionaryValueAccessTest classTrait + TDictionaryKeysValuesAssociationsAccess classTrait + TDictionaryAssociationAccessTest classTrait + TPrintTest classTrait + TAsStringCommaAndDelimiterTest classTrait + TOccurrencesForMultiplinessTest classTrait",
 	"classvars" : [
 		 ],
 	"commentStamp" : "BernardoContreras 6/20/2016 16:33",
@@ -12,5 +12,5 @@
 	"pools" : [
 		 ],
 	"super" : "CollectionRootTest",
-	"traitcomposition" : "TIncludesTest + (TDictionaryAddingTest - {#testAddAll. #testDeclareFrom}) + TDictionaryComparingTest + TDictionaryCopyingTest + TDictionaryEnumeratingTest + TDictionaryRemovingTest + (TPutBasicTest - {#testAtPutOutOfBounds}) + TStructuralEqualityTest + (TCopyTest - {#testCopyEmptyWithout. #testCopyNonEmptyWithout. #testCopyNonEmptyWithoutNotIncluded}) + TDictionaryIncludesWithIdentityCheckTest + TDictionaryValueAccessTest + TDictionaryKeysValuesAssociationsAccess + TDictionaryAssociationAccessTest + TPrintTest + TAsStringCommaAndDelimiterTest",
+	"traitcomposition" : "TIncludesTest + (TDictionaryAddingTest - {#testAddAll. #testDeclareFrom}) + TDictionaryComparingTest + TDictionaryCopyingTest + TDictionaryEnumeratingTest + TDictionaryRemovingTest + (TPutBasicTest - {#testAtPutOutOfBounds}) + TStructuralEqualityTest + (TCopyTest - {#testCopyEmptyWithout. #testCopyNonEmptyWithout. #testCopyNonEmptyWithoutNotIncluded}) + TDictionaryIncludesWithIdentityCheckTest + TDictionaryValueAccessTest + TDictionaryKeysValuesAssociationsAccess + TDictionaryAssociationAccessTest + TPrintTest + TAsStringCommaAndDelimiterTest + TOccurrencesForMultiplinessTest",
 	"type" : "normal" }

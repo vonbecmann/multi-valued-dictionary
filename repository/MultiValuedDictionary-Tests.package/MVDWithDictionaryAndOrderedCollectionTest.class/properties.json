@@ -6,7 +6,8 @@
 		 ],
 	"commentStamp" : "BernardoContreras 6/19/2016 21:13",
 	"instvars" : [
-		"nonEmptyDict" ],
+		"nonEmptyDict",
+		"duplicatedElement" ],
 	"name" : "MVDWithDictionaryAndOrderedCollectionTest",
 	"pools" : [
 		 ],
