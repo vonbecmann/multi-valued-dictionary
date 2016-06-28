@@ -8,7 +8,7 @@ select: aBlock
 	newCollection := self copyEmpty.
 	self
 		associationsDo: [ :association | 
-			association value isCollection
+			collectionClass == association value class
 				ifTrue: [ | newValues |
 					newValues := collectionClass new.
 					association value

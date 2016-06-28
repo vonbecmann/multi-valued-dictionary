@@ -4,6 +4,6 @@ valuesDo: aBlock
 
 	self
 		associationsDo: [ :association | 
-			association value isCollection
+			collectionClass == association value class
 				ifTrue: [ association value do: [ :eachValue | aBlock value: eachValue ] ]
 				ifFalse: [ aBlock value: association value ] ]
