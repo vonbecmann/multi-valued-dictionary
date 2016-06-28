@@ -1,6 +1,5 @@
 {
 	"class" : {
-		"ruleRBCollectionProtocolRuleV1FalsePositive" : "BernardoContreras 6/27/2016 21:09",
-		"ruleRBEqualsTrueRuleV1FalsePositive" : "BernardoContreras 6/27/2016 21:05" },
+		"ruleCollectionProtocolRuleV1FalsePositive" : "BernardoContreras 6/28/2016 15:42" },
 	"instance" : {
 		 } }

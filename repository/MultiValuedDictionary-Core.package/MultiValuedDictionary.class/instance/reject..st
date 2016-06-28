@@ -4,4 +4,21 @@ reject: aBlock
 	Collect into a new collection like the receiver only those elements for 
 	which aBlock evaluates to false. Answer the new collection."
 
-	^ self select: [ :element | (aBlock value: element) == false ]
+	"Uses do: for performance and to be sure that it is a collectionClass."
+
+	| newCollection |
+	newCollection := self copyEmpty.
+	self
+		associationsDo: [ :association | 
+			collectionClass == association value class
+				ifTrue: [ | newValues |
+					newValues := collectionClass new.
+					association value
+						do: [ :eachValue | 
+							(aBlock value: eachValue) ifFalse: [ newValues add: eachValue ] ].
+					newValues isEmpty
+						ifFalse: [ newCollection privateAt: association key put: newValues ] ]
+				ifFalse: [ 
+					(aBlock value: association value)
+						ifFalse: [ newCollection privateAt: association key put: association value ] ] ].
+	^ newCollection
