@@ -8,7 +8,7 @@ size
 		associationsDo: [ :assoc | 
 			tally := tally
 				+
-					(assoc value isCollection
+					(collectionClass == assoc value class
 						ifTrue: [ assoc value size ]
 						ifFalse: [ 1 ]) ].
 	^ tally
