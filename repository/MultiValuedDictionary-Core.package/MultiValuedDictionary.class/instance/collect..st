@@ -4,13 +4,14 @@ collect: aBlock
 	resulting values into a collection that is like me. Answer with the new
 	collection."
 
+	"Uses do: for performance and to be sure that it is a collectionClass."
+
 	| newCollection |
 	newCollection := self copyEmpty.
 	self
 		associationsDo: [ :association | 
 			association value isCollection
-				ifTrue: [ 
-					| newValues |
+				ifTrue: [ | newValues |
 					newValues := collectionClass new.
 					association value do: [ :eachValue | newValues add: (aBlock value: eachValue) ].
 					newValues isEmpty
