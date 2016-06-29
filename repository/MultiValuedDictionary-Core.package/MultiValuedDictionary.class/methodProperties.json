@@ -5,8 +5,8 @@
 	"instance" : {
 		"," : "BernardoContreras 6/20/2016 20:59",
 		"=" : "BernardoContreras 6/20/2016 17:02",
-		"add:" : "BernardoContreras 6/28/2016 15:49",
-		"addAll:" : "BernardoContreras 6/20/2016 21:21",
+		"add:" : "BernardoContreras 6/29/2016 17:17",
+		"addAll:" : "BernardoContreras 6/29/2016 17:20",
 		"allSatisfy:" : "BernardoContreras 6/22/2016 18:59",
 		"anyOne" : "BernardoContreras 6/22/2016 21:36",
 		"anySatisfy:" : "BernardoContreras 6/22/2016 18:59",
@@ -23,7 +23,7 @@
 		"at:add:" : "BernardoContreras 6/28/2016 18:14",
 		"at:addAll:" : "BernardoContreras 6/28/2016 18:30",
 		"at:ifAbsent:" : "BernardoContreras 6/27/2016 00:41",
-		"at:ifAbsentPut:" : "BernardoContreras 6/22/2016 20:47",
+		"at:ifAbsentPut:" : "BernardoContreras 6/29/2016 17:14",
 		"at:ifPresent:" : "BernardoContreras 6/22/2016 20:36",
 		"at:put:" : "BernardoContreras 6/22/2016 21:29",
 		"at:putAll:" : "BernardoContreras 6/22/2016 21:29",
@@ -46,7 +46,7 @@
 		"errorEmptyCollection" : "BernardoContreras 6/19/2016 21:59",
 		"errorKeyNotFound:" : "BernardoContreras 6/21/2016 18:13",
 		"errorNotFound:" : "BernardoContreras 6/19/2016 22:57",
-		"hash" : "BernardoContreras 6/21/2016 20:27",
+		"hash" : "BernardoContreras 6/29/2016 17:21",
 		"identityIncludes:" : "BernardoContreras 6/22/2016 17:28",
 		"ifEmpty:" : "BernardoContreras 6/19/2016 21:29",
 		"ifEmpty:ifNotEmpty:" : "BernardoContreras 6/19/2016 23:58",
@@ -92,4 +92,5 @@
 		"size" : "BernardoContreras 6/28/2016 15:50",
 		"sumNumbers:" : "BernardoContreras 6/19/2016 22:52",
 		"values" : "BernardoContreras 6/20/2016 19:45",
-		"valuesDo:" : "BernardoContreras 6/28/2016 15:09" } }
+		"valuesDo:" : "BernardoContreras 6/28/2016 15:09",
+		"wrap:" : "BernardoContreras 6/29/2016 17:14" } }
