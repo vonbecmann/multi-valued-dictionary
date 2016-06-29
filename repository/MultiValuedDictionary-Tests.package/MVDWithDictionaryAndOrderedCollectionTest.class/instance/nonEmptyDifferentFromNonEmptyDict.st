@@ -2,7 +2,7 @@ requirements
 nonEmptyDifferentFromNonEmptyDict
 	" return a dictionary for which all keys are not included in nonEmptyDict"
 
-	^ (MultiValuedDictionary dictionary: Dictionary collection: OrderedCollection)
+	^ (MultiValuedDictionary dictionary: self dictionaryClass collection: OrderedCollection)
 		add: #h -> 101;
 		add: #i -> #(102 103);
 		add: #j -> {104 . 105};

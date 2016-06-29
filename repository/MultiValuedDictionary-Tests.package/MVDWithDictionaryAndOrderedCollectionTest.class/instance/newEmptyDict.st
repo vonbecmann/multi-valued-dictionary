@@ -1,3 +1,3 @@
 requirements
 newEmptyDict
-	^ MultiValuedDictionary dictionary: Dictionary collection: OrderedCollection
+	^ MultiValuedDictionary dictionary: self dictionaryClass collection: OrderedCollection

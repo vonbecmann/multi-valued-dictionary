@@ -1,5 +1,5 @@
 requirements
 nonEmpty1Element
-	^ (MultiValuedDictionary dictionary: Dictionary collection: OrderedCollection)
+	^ (MultiValuedDictionary dictionary: self dictionaryClass collection: OrderedCollection)
 		add: #a -> 5;
 		yourself

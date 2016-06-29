@@ -5,4 +5,4 @@ anyOne
 	semi-homogeneous collections."
 
 	self emptyCheck.
-	^ dictionary anyOne
+	self valuesDo: [ :each | ^ each ]

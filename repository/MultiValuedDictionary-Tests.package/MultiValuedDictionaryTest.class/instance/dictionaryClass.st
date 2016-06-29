@@ -1,0 +1,3 @@
+requirements
+dictionaryClass
+	^ self subclassResponsibility
