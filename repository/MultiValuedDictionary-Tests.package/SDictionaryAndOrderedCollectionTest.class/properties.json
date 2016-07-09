@@ -1,0 +1,14 @@
+{
+	"category" : "MultiValuedDictionary-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "",
+	"instvars" : [
+		 ],
+	"name" : "SDictionaryAndOrderedCollectionTest",
+	"pools" : [
+		 ],
+	"super" : "SimpleMultiValuedDictionaryTest",
+	"type" : "normal" }

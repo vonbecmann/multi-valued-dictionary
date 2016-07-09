@@ -1,6 +1,6 @@
 {
 	"class" : {
-		 },
+		"isAbstract" : "BernardoContreras 7/9/2016 16:36" },
 	"instance" : {
 		"aValue" : "BernardoContreras 7/6/2016 19:22",
 		"anIndex" : "BernardoContreras 7/6/2016 19:24",
@@ -19,7 +19,7 @@
 		"collectionWithSortableElements" : "BernardoContreras 7/7/2016 18:59",
 		"collectionWithoutEqualElements" : "BernardoContreras 7/8/2016 19:55",
 		"collectionWithoutNilElements" : "BernardoContreras 7/7/2016 19:00",
-		"dictionaryClass" : "BernardoContreras 7/5/2016 19:07",
+		"dictionaryClass" : "BernardoContreras 7/9/2016 16:35",
 		"elementNotIn" : "BernardoContreras 7/6/2016 18:28",
 		"elementNotInForOccurrences" : "BernardoContreras 7/8/2016 19:57",
 		"elementToAdd" : "BernardoContreras 7/6/2016 18:04",
@@ -48,6 +48,6 @@
 		"testIntersectionBasic" : "BernardoContreras 7/8/2016 22:16",
 		"testIntersectionTwoSimilarElementsInIntersection" : "BernardoContreras 7/8/2016 22:16",
 		"testNew" : "BernardoContreras 7/5/2016 19:04",
-		"valueCollectionClass" : "BernardoContreras 7/7/2016 20:01",
+		"valueCollectionClass" : "BernardoContreras 7/9/2016 16:35",
 		"valueNotIn" : "BernardoContreras 7/6/2016 18:05",
 		"valueNotInNonEmpty" : "BernardoContreras 7/6/2016 18:25" } }

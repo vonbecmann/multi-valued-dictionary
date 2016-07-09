@@ -1,3 +1,3 @@
 accessing
 dictionaryClass
-	^ Dictionary
+	^ self subclassResponsibility
