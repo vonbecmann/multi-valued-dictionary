@@ -4,10 +4,10 @@
 		 ],
 	"classvars" : [
 		 ],
-	"commentStamp" : "BernardoContreras 7/10/2016 17:55",
+	"commentStamp" : "BernardoContreras 7/10/2016 17:56",
 	"instvars" : [
 		 ],
-	"name" : "MVDWithIdentityDictionaryAndOrderedCollectionTest",
+	"name" : "MVDWithSmallDictionaryAndOrderedCollectionTest",
 	"pools" : [
 		 ],
 	"super" : "MVDWithDictionaryAndOrderedCollectionTest",

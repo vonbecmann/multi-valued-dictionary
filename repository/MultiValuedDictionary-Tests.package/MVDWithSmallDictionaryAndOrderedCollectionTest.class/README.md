@@ -1,4 +1,4 @@
-dictionary: IdentityDictionary 
+dictionary: SmallDictionary 
 collection: OrderedCollection 
 
 

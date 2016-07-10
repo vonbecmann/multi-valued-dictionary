@@ -1,5 +1,2 @@
-a multi valued dictionary 
-with Dictionary and OrderedCollection.
-
-i have to cheat with the data set.
-
+dictionary: Dictionary 
+collection: OrderedCollection 
