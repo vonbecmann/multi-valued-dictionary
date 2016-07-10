@@ -1,0 +1,14 @@
+{
+	"category" : "MultiValuedDictionary-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "BernardoContreras 7/9/2016 20:34",
+	"instvars" : [
+		 ],
+	"name" : "SSmallDictionaryAndOrderedCollectionTest",
+	"pools" : [
+		 ],
+	"super" : "SDictionaryAndOrderedCollectionTest",
+	"type" : "normal" }

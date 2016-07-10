@@ -1,3 +1,3 @@
 requirements
 emptyDict
-	^ self subclassResponsibility
+	^ MultiValuedDictionary dictionary: self dictionaryClass collection: self valueCollectionClass

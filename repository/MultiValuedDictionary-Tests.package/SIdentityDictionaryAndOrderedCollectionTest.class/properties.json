@@ -10,5 +10,5 @@
 	"name" : "SIdentityDictionaryAndOrderedCollectionTest",
 	"pools" : [
 		 ],
-	"super" : "SimpleMultiValuedDictionaryTest",
+	"super" : "SDictionaryAndOrderedCollectionTest",
 	"type" : "normal" }

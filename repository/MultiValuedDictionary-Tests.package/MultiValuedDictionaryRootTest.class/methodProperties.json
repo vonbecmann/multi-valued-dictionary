@@ -1,0 +1,24 @@
+{
+	"class" : {
+		"isAbstract" : "BernardoContreras 7/9/2016 20:53" },
+	"instance" : {
+		"classToBeTested" : "BernardoContreras 7/9/2016 20:50",
+		"dictionaryClass" : "BernardoContreras 7/9/2016 20:50",
+		"testAddAll" : "BernardoContreras 7/10/2016 00:43",
+		"testAddWithKeyNotIn" : "BernardoContreras 7/9/2016 21:42",
+		"testAnyOneWithEmptyDict" : "BernardoContreras 7/9/2016 21:12",
+		"testAtIfAbsentPutCollection" : "BernardoContreras 7/10/2016 01:06",
+		"testAtIfAbsentPutCollection02" : "BernardoContreras 7/10/2016 01:07",
+		"testAtIfAbsentPutCollection03" : "BernardoContreras 7/10/2016 01:07",
+		"testAtPutAll" : "BernardoContreras 7/10/2016 01:05",
+		"testAtPutAllTwoCollections" : "BernardoContreras 7/10/2016 01:06",
+		"testDeclareFrom" : "BernardoContreras 7/10/2016 00:49",
+		"testDifferenceWithNonNullIntersection" : "BernardoContreras 7/10/2016 00:53",
+		"testDifferenceWithSeparateCollection" : "BernardoContreras 7/10/2016 00:56",
+		"testEquality" : "BernardoContreras 7/10/2016 01:01",
+		"testIntersectionBasic" : "BernardoContreras 7/10/2016 01:03",
+		"testIntersectionTwoSimilarElementsInIntersection" : "BernardoContreras 7/10/2016 01:04",
+		"testIsCollection" : "BernardoContreras 7/9/2016 21:11",
+		"testIsDictionary" : "BernardoContreras 7/9/2016 21:11",
+		"testNew" : "BernardoContreras 7/9/2016 20:54",
+		"valueCollectionClass" : "BernardoContreras 7/9/2016 20:51" } }

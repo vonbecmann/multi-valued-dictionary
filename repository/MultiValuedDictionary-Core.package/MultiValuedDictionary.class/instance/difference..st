@@ -2,14 +2,11 @@ enumerating
 difference: aCollection
 	"Answer the set theoretic difference of two collections. This is a specialized version for Dictionaries keeping the keys of the objects. At a slightly higher price of an additional Set to track duplicates."
 
-	| other result duplicates |
+	| other duplicates |
 	other := aCollection asSet.
 	duplicates := Set new.
-	"result := self class new: self size."
-	result := self copyEmpty.
-	self
-		keysAndValuesDo: [ :key :value | 
-			((other includes: value) not and: [ (duplicates includes: value) not ])
-				ifTrue: [ duplicates add: value.
-					result at: key put: value ] ].
-	^ result
+	^ self
+		select: [ :each | 
+			((other includes: each) not and: [ (duplicates includes: each) not ])
+				ifTrue: [ duplicates add: each. true ]
+				ifFalse: [ false ] ]

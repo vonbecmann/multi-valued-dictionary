@@ -1,5 +1,4 @@
 requirements
 elementNotInForOccurrences
 	" return an element notIncluded in #collectionWithoutEqualElements"
-
-	^ self subclassResponsibility
+	^ 715

@@ -1,3 +1,3 @@
 requirements
 nonEmpty
-	^ self subclassResponsibility
+	^ nonEmptyDict
