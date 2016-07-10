@@ -3,6 +3,7 @@
 		"isAbstract" : "BernardoContreras 7/9/2016 20:53" },
 	"instance" : {
 		"classToBeTested" : "BernardoContreras 7/9/2016 20:50",
+		"collectionClass" : "BernardoContreras 7/10/2016 18:54",
 		"dictionaryClass" : "BernardoContreras 7/9/2016 20:50",
 		"testAddAll" : "BernardoContreras 7/10/2016 00:43",
 		"testAddWithKeyNotIn" : "BernardoContreras 7/9/2016 21:42",
