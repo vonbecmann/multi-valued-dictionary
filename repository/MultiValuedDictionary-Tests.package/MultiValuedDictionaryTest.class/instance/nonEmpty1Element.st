@@ -1,5 +1,5 @@
 requirements
 nonEmpty1Element
-	^ (MultiValuedDictionary dictionary: self dictionaryClass collection: self valueCollectionClass)
+	^ (self newEmptyDict)
 		add: #a -> 5;
 		yourself

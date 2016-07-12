@@ -1,5 +1,5 @@
 requirements
 sizeCollection
-	^ (MultiValuedDictionary dictionary: self dictionaryClass collection: self valueCollectionClass)
+	^ (self newEmptyDict)
 		add: #B -> {3 . 7};
 		yourself

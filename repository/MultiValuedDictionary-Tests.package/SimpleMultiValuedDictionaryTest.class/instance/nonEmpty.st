@@ -1,3 +1,3 @@
 requirements
 nonEmpty
-	^ nonEmptyDict
+	^ self nonEmptyDict

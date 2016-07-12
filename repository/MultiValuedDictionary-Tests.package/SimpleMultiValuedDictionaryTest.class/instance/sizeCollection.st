@@ -1,3 +1,3 @@
 requirements
 sizeCollection
-	^ nonEmptyDict
+	^ self nonEmptyDict
