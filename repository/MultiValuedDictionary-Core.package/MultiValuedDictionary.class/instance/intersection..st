@@ -2,13 +2,11 @@ enumerating
 intersection: aCollection
 	"Answer the set theoretic intersection of two collections."
 
-	| set outputSet |
-	set := self asSet.
-	outputSet := Set new.
-	aCollection
-		do: [ :each | 
-			((set includes: each) and: [ (outputSet includes: each) not ])
-				ifTrue: [ outputSet add: each ] ].
-	^ self copyEmpty
-		addAll: outputSet asArray;
-		yourself
+	| other duplicates |
+	other := aCollection asSet.
+	duplicates := Set new.
+	^ self
+		select: [ :each | 
+			((other includes: each) and: [ (duplicates includes: each) not ])
+				ifTrue: [ duplicates add: each. true ]
+				ifFalse: [ false ] ]
