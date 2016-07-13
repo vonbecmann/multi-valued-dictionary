@@ -1,6 +1,6 @@
 running
 setUp
-	nonEmptyDict := (MultiValuedDictionary dictionary: self dictionaryClass collection: self valueCollectionClass)
+	nonEmptyDict := (self newEmptyDict)
 		add: #a -> self elementTwiceIn;
 		add: #b -> 30;
 		add: #c -> self elementTwiceIn;
