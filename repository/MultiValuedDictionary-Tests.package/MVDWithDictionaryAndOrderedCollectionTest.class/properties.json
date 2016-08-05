@@ -10,5 +10,5 @@
 	"name" : "MVDWithDictionaryAndOrderedCollectionTest",
 	"pools" : [
 		 ],
-	"super" : "MultiValuedDictionaryTest",
+	"super" : "MixedDictionaryTest",
 	"type" : "normal" }
