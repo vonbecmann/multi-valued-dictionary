@@ -7,8 +7,8 @@
 	"commentStamp" : "BernardoContreras 7/10/2016 17:56",
 	"instvars" : [
 		 ],
-	"name" : "MVDWithSmallDictionaryAndOrderedCollectionTest",
+	"name" : "MxSmallDictionaryAndOrderedCollectionTest",
 	"pools" : [
 		 ],
-	"super" : "MVDWithDictionaryAndOrderedCollectionTest",
+	"super" : "MxDictionaryAndOrderedCollectionTest",
 	"type" : "normal" }
