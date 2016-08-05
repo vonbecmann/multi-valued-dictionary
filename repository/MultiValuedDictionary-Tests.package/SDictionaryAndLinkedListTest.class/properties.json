@@ -10,5 +10,5 @@
 	"name" : "SDictionaryAndLinkedListTest",
 	"pools" : [
 		 ],
-	"super" : "SimpleMultiValuedDictionaryTest",
+	"super" : "SimpleDictionaryTest",
 	"type" : "normal" }

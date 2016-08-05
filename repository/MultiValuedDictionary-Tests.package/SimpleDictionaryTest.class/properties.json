@@ -8,7 +8,7 @@
 	"instvars" : [
 		"nonEmptyDict",
 		"duplicatedElement" ],
-	"name" : "SimpleMultiValuedDictionaryTest",
+	"name" : "SimpleDictionaryTest",
 	"pools" : [
 		 ],
 	"super" : "MultiValuedDictionaryRootTest",
