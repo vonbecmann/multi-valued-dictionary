@@ -1,6 +1,6 @@
-accessing
+adding
 at: key add: anObject
-	"add an object at key."
+	"add an object at the given key."
 
 	| existingValues |
 	existingValues := dictionary at: key ifAbsent: nil.

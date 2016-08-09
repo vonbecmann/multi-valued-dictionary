@@ -1,6 +1,6 @@
-accessing
+adding
 at: key addAll: aCollection
-	"add all values of a collection at key."
+	"add all values of a collection at the given key."
 
 	| existingValues |
 	existingValues := dictionary at: key ifAbsent: nil.
