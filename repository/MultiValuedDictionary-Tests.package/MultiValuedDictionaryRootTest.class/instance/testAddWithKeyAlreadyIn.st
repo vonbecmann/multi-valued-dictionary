@@ -1,13 +1,13 @@
 test - adding
-testAddWithKeyNotIn
+testAddWithKeyAlreadyIn
 	| dictionary result association oldSize |
 	dictionary := self nonEmptyDict.
 	oldSize := dictionary size.
-	association := self associationWithKeyNotInToAdd.
+	association := self associationWithKeyAlreadyInToAdd .
 	result := dictionary add: association.
 	
 	self assert: result = association.
 	self 
 		assertCollection: (dictionary at: association key) 
 		hasSameElements: (self wrap: association value).
-	self assert: dictionary size = (oldSize + 1).
+	self assert: dictionary size = oldSize .

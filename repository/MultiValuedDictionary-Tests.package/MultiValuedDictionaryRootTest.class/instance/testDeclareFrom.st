@@ -15,5 +15,7 @@ testDeclareFrom
 	
 	"if the key does not exist, then it gets removed from newDict and is added to the receiver"
 	self nonEmptyDict declare: associationKeyNotIn key from: newDict.
-	self assert: (dictionary  at: associationKeyNotIn key) = associationKeyNotIn value.
+	self 
+		assertCollection: (dictionary at: associationKeyNotIn key)
+	 	hasSameElements: (self wrap: associationKeyNotIn value).
 	self assert: (newDict size = 0)

@@ -10,15 +10,12 @@ reject: aBlock
 	newCollection := self copyEmpty.
 	self
 		associationsDo: [ :association | 
-			collectionClass == association value class
-				ifTrue: [ | newValues |
-					newValues := collectionClass new.
-					association value
-						do: [ :eachValue | 
-							(aBlock value: eachValue) ifFalse: [ newValues add: eachValue ] ].
-					newValues isEmpty
-						ifFalse: [ newCollection privateAt: association key put: newValues ] ]
-				ifFalse: [ 
-					(aBlock value: association value)
-						ifFalse: [ newCollection privateAt: association key put: association value ] ] ].
+			| newValues |
+			newValues := collectionClass new.
+			association value
+				do: [ :eachValue | 
+					(aBlock value: eachValue)
+						ifFalse: [ newValues add: eachValue ] ].
+			newValues isEmpty
+				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection

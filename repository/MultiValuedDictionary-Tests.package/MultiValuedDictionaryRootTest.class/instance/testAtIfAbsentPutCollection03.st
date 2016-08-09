@@ -6,4 +6,6 @@ testAtIfAbsentPutCollection03
 
 	collection at: association key ifAbsentPut: [ association value ].
 
-	self assert: (collection at: association key) equals: association value
+	self 
+		assertCollection: (collection at: association key)
+	 	hasSameElements: (self wrap: association value)

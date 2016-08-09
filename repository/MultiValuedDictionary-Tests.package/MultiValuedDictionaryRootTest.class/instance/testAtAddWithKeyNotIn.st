@@ -7,5 +7,7 @@ testAtAddWithKeyNotIn
 	
 	dictionary at: association key add: association value.
 	
-	self assert: (dictionary at: association key) = association value.
+	self 
+		assertCollection: (dictionary at: association key)  
+		hasSameElements:  (self wrap: association value).
 	self assert: dictionary size = (oldSize + 1)

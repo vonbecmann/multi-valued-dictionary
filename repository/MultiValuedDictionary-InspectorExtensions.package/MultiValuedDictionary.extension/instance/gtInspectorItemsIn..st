@@ -10,10 +10,7 @@ gtInspectorItemsIn: composite
 			| limitedString limit |
 			limit := 100.
 			limitedString := String
-				streamContents: [ :s | 
-					collectionClass == each value class
-						ifTrue: [ each value printElementsOn: s ]
-						ifFalse: [ each value printOn: s ] ]
+				streamContents: [ :s | each value printElementsOn: s ]
 				limitedTo: limit.
 			GTObjectPrinter new
 				asNonTruncatedTextFrom:

@@ -1,19 +1,10 @@
 accessing
 at: key addAll: aCollection
-	"add all values of a collectionn at key."
+	"add all values of a collection at key."
 
-	| existingValue |
-	existingValue := dictionary at: key ifAbsent: nil.
-	existingValue
-		ifNil: [ self privateAt: key put: (collectionClass withAll: aCollection) ]
-		ifNotNil: [ 
-			collectionClass == existingValue class
-				ifTrue: [ existingValue addAll: aCollection ]
-				ifFalse: [ 
-					self
-						privateAt: key
-						put:
-							((collectionClass with: existingValue)
-								addAll: aCollection;
-								yourself) ] ].
+	| existingValues |
+	existingValues := dictionary at: key ifAbsent: nil.
+	existingValues 
+		ifNil: [ self at: key putAll: aCollection ] 
+		ifNotNil: [ existingValues addAll: aCollection ].
 	^ aCollection

@@ -6,10 +6,6 @@ keyAtValue: value ifAbsent: exceptionBlock
 
 	self
 		associationsDo: [ :association | 
-			collectionClass == association value class
-				ifTrue: [ 
-					association value
-						do: [ :eachValue | value = eachValue ifTrue: [ ^ association key ] ] ]
-				ifFalse: [ 
-					value = association value ifTrue: [ ^ association key ] ] ].
+			association value
+				do: [ :eachValue | value = eachValue ifTrue: [ ^ association key ] ] ].
 	^ exceptionBlock value
