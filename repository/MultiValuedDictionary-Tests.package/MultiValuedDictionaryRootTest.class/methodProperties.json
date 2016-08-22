@@ -25,6 +25,7 @@
 		"testAtIfAbsentPutCollection" : "BernardoContreras 8/8/2016 18:09",
 		"testAtIfAbsentPutCollection02" : "BernardoContreras 7/10/2016 01:07",
 		"testAtIfAbsentPutCollection03" : "BernardoContreras 8/8/2016 18:11",
+		"testAtIfPresentIfAbsent" : "BernardoContreras 8/22/2016 19:16",
 		"testAtPut" : "BernardoContreras 8/8/2016 20:01",
 		"testAtPutAll" : "BernardoContreras 7/10/2016 01:05",
 		"testAtPutAllTwoCollections" : "BernardoContreras 7/10/2016 01:06",
