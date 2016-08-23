@@ -33,6 +33,7 @@
 		"testAtPutDict" : "BernardoContreras 8/8/2016 20:03",
 		"testAtPutNil" : "BernardoContreras 8/8/2016 20:11",
 		"testAtPutTwoValues" : "BernardoContreras 8/8/2016 20:15",
+		"testCollectThenRejectOnEmptyDict" : "BernardoContreras 8/23/2016 14:50",
 		"testDeclareFrom" : "BernardoContreras 8/8/2016 18:18",
 		"testDetectErrorNotFound" : "BernardoContreras 7/13/2016 17:56",
 		"testDictionaryConcatenationWithCommonKeysDifferentValues" : "BernardoContreras 8/8/2016 18:21",
