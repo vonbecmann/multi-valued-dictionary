@@ -2,7 +2,6 @@ a crappy multi-valued dictionary
 
 where each Association is like
 
-- key -> value or
 - key -> a collection of values
 
 
@@ -14,7 +13,7 @@ To install it do
 ```Smalltalk
 Metacello new
    baseline: 'MultiValuedDictionary';
-   repository: 'github://vonbecmann/multi-valued-dictionary/repository';
+   repository: 'github://vonbecmann/multi-valued-dictionary:pharo5/repository';
    load.
 ```
 
