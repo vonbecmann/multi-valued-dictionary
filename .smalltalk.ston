@@ -8,7 +8,15 @@ SmalltalkCISpec {
   ],
   #testing : {
     #exclude : {
-      #classes : [ #MxSmallDictionaryAndLinkedListTest ]
+      #classes : [
+      	 #MVSmallDictionaryAndOrderedCollectionTest,
+	
+	 #MxSmallDictionaryAndLinkedListTest,
+	 #MxSmallDictionaryAndOrderedCollectionTest,
+
+	 #SSmallDictionaryAndLinkedListTest,
+	 #SSmallDictionaryAndOrderedCollectionTest
+         ]
       }
-  }
-}
+   }
+}  
