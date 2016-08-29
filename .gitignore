@@ -1,3 +1,5 @@
 /target/*
 
 /README.md~
+/.smalltalk.ston~
+/.travis.yml~
