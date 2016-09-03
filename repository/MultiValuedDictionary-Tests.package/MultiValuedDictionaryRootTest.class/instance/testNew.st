@@ -1,3 +1,3 @@
 tests
 testNew
-	self should: [ MultiValuedDictionary new ] raise: Error
+	self should: [ self targetClass new ] raise: Error
