@@ -1,0 +1,3 @@
+requirements
+sizeCollection
+	^ self nonEmptyDict

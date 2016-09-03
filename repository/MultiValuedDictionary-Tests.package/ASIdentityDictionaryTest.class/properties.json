@@ -1,0 +1,14 @@
+{
+	"category" : "MultiValuedDictionary-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "BernardoContreras 9/2/2016 23:31",
+	"instvars" : [
+		 ],
+	"name" : "ASIdentityDictionaryTest",
+	"pools" : [
+		 ],
+	"super" : "ArraySimpleDictionaryTest",
+	"type" : "normal" }
