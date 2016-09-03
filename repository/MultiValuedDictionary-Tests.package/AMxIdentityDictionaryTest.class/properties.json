@@ -1,0 +1,14 @@
+{
+	"category" : "MultiValuedDictionary-Tests",
+	"classinstvars" : [
+		 ],
+	"classvars" : [
+		 ],
+	"commentStamp" : "BernardoContreras 9/3/2016 19:10",
+	"instvars" : [
+		 ],
+	"name" : "AMxIdentityDictionaryTest",
+	"pools" : [
+		 ],
+	"super" : "ArrayMixedDictionaryTest",
+	"type" : "normal" }
