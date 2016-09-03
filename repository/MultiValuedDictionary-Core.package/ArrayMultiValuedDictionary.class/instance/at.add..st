@@ -4,7 +4,10 @@ at: key add: anObject
 
 	| existingValues |
 	existingValues := dictionary at: key ifAbsent: nil.
-	existingValues
-		ifNil: [ self at: key put: anObject ]
-		ifNotNil: [ self privateAt: key put: (existingValues copyWith: anObject) ].
+	dictionary
+		at: key
+		put:
+			(existingValues
+				ifNil: [ Array with: anObject ]
+				ifNotNil: [ existingValues copyWith: anObject ]).
 	^ anObject

@@ -8,5 +8,5 @@ inject: thisValue into: binaryBlock
 
 	| nextValue |
 	nextValue := thisValue.
-	self do: [ :each | nextValue := binaryBlock value: nextValue value: each ].
+	self valuesDo: [ :each | nextValue := binaryBlock value: nextValue value: each ].
 	^ nextValue

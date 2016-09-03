@@ -6,7 +6,7 @@ do: elementBlock separatedBy: separatorBlock
 	| beforeFirst |
 	beforeFirst := true.
 	self
-		do: [ :each | 
+		valuesDo: [ :each | 
 			beforeFirst
 				ifTrue: [ beforeFirst := false ]
 				ifFalse: [ separatorBlock value ].

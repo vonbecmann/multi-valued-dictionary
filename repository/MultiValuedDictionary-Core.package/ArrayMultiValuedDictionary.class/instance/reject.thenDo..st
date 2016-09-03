@@ -6,6 +6,6 @@ reject: rejectBlock thenDo: doBlock
 	 Optimized for efficiency."
 
 	self
-		do: [ :each | 
+		valuesDo: [ :each | 
 			(rejectBlock value: each)
 				ifFalse: [ doBlock value: each ] ]

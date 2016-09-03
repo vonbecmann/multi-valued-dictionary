@@ -4,6 +4,6 @@ select: selectBlock thenDo: doBlock
 	Do not create the intermediate collection."
 
 	self
-		do: [ :each | 
+		valuesDo: [ :each | 
 			(selectBlock value: each)
 				ifTrue: [ doBlock value: each ] ]

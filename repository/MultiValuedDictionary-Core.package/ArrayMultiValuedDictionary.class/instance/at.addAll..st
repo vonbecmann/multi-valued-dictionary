@@ -4,7 +4,10 @@ at: key addAll: aCollection
 
 	| existingValues |
 	existingValues := dictionary at: key ifAbsent: nil.
-	existingValues
-		ifNil: [ self at: key putAll: aCollection ]
-		ifNotNil: [ self privateAt: key put: (existingValues , aCollection) ].
+	dictionary
+		at: key
+		put:
+			(existingValues
+				ifNil: [ Array withAll: aCollection ]
+				ifNotNil: [ existingValues , aCollection ]).
 	^ aCollection

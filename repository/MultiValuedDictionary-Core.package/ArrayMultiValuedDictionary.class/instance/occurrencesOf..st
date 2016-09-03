@@ -4,5 +4,5 @@ occurrencesOf: anObject
 
 	| tally |
 	tally := 0.
-	self do: [ :each | anObject = each ifTrue: [ tally := tally + 1 ] ].
+	self valuesDo: [ :each | anObject = each ifTrue: [ tally := tally + 1 ] ].
 	^ tally
