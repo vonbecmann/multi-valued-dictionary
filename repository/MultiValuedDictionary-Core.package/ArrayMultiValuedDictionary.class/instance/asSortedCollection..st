@@ -4,6 +4,7 @@ asSortedCollection: aSortBlock
 
 	| aSortedCollection |
 	aSortedCollection := SortedCollection new: self size.
-	aSortedCollection sortBlock: aSortBlock.
-	aSortedCollection addAll: self.
 	^ aSortedCollection
+		sortBlock: aSortBlock;
+		addAll: self;
+		yourself
