@@ -1,5 +1,3 @@
 comparing
 hash
-	| hash |
-	hash := (self class hash + self dictionaryClass hash) hashMultiply.
-	^ (hash + dictionary hash) hashMultiply
+	^ (self class hash + dictionary hash) hashMultiply
