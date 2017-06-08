@@ -5,18 +5,5 @@ SmalltalkCISpec {
       #directory : 'repository',
       #platforms : [ #pharo ]
     }
-  ],
-  #testing : {
-    #exclude : {
-      #classes : [
-      	 #MVSmallDictionaryAndOrderedCollectionTest,
-	
-	 #MxSmallDictionaryAndLinkedListTest,
-	 #MxSmallDictionaryAndOrderedCollectionTest,
-
-	 #SSmallDictionaryAndLinkedListTest,
-	 #SSmallDictionaryAndOrderedCollectionTest
-         ]
-      }
-   }
+  ]
 }  
