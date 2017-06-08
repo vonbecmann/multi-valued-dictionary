@@ -12,7 +12,7 @@ To install it do
 ```Smalltalk
 Metacello new
    baseline: 'MultiValuedDictionary';
-   repository: 'github://vonbecmann/multi-valued-dictionary/repository';
+   repository: 'github://vonbecmann/multi-valued-dictionary:pharo6/repository';
    load.
 ```
 
