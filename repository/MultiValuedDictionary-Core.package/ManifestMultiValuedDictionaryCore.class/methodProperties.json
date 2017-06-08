@@ -1,6 +1,7 @@
 {
+	"instance" : { },
 	"class" : {
-		"ruleCollectionProtocolRuleV1FalsePositive" : "BernardoContreras 6/28/2016 15:42",
-		"ruleUnaryAccessingMethodWithoutReturnRuleV1FalsePositive" : "BernardoContreras 9/3/2016 19:25" },
-	"instance" : {
-		 } }
+		"ruleUnaryAccessingMethodWithoutReturnRuleV1FalsePositive" : "BernardoContreras 9/3/2016 19:25",
+		"ruleCollectionProtocolRuleV1FalsePositive" : "BernardoContreras 6/28/2016 15:42"
+	}
+}
