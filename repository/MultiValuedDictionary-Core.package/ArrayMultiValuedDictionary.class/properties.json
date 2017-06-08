@@ -1,14 +1,13 @@
 {
-	"category" : "MultiValuedDictionary-Core",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "BernardoContreras 9/2/2016 21:11",
-	"instvars" : [
-		"dictionary" ],
-	"name" : "ArrayMultiValuedDictionary",
-	"pools" : [
-		 ],
 	"super" : "Object",
-	"type" : "normal" }
+	"category" : "MultiValuedDictionary-Core",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [
+		"dictionary"
+	],
+	"name" : "ArrayMultiValuedDictionary",
+	"type" : "normal"
+}
