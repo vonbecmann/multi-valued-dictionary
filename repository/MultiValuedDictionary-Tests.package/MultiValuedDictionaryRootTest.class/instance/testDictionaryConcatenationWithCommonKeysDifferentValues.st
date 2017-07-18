@@ -10,8 +10,8 @@ testDictionaryConcatenationWithCommonKeysDifferentValues
 	
 	
 	result := dictionary1 , dictionary2.
-	self assert: result size = ( dictionary2 size).
+	self assert: result size = (dictionary1 size + dictionary2 size).
 	
 	dictionary2 
 		associationsDo: [ :assoc | 
-			self assertCollection: (result at: assoc key) hasSameElements: (self wrap: assoc value) ]
+			self assert: ((result at: assoc key) includes: assoc value) ]

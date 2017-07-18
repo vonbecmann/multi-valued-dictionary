@@ -1,14 +1,11 @@
 {
-	"category" : "MultiValuedDictionary-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "AMVDictionaryTest",
-	"pools" : [
-		 ],
 	"super" : "ArrayMultiValuedDictionaryTest",
-	"type" : "normal" }
+	"category" : "MultiValuedDictionary-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "AMVDictionaryTest",
+	"type" : "normal"
+}

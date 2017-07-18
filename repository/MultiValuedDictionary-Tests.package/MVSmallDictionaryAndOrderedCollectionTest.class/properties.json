@@ -1,14 +1,11 @@
 {
-	"category" : "MultiValuedDictionary-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "",
-	"instvars" : [
-		 ],
-	"name" : "MVSmallDictionaryAndOrderedCollectionTest",
-	"pools" : [
-		 ],
 	"super" : "MVDictionaryAndOrderedCollectionTest",
-	"type" : "normal" }
+	"category" : "MultiValuedDictionary-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MVSmallDictionaryAndOrderedCollectionTest",
+	"type" : "normal"
+}

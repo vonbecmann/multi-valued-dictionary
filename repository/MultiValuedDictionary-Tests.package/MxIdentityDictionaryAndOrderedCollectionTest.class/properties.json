@@ -1,14 +1,11 @@
 {
-	"category" : "MultiValuedDictionary-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "BernardoContreras 7/10/2016 17:55",
-	"instvars" : [
-		 ],
-	"name" : "MxIdentityDictionaryAndOrderedCollectionTest",
-	"pools" : [
-		 ],
 	"super" : "MxDictionaryAndOrderedCollectionTest",
-	"type" : "normal" }
+	"category" : "MultiValuedDictionary-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
+	"instvars" : [ ],
+	"name" : "MxIdentityDictionaryAndOrderedCollectionTest",
+	"type" : "normal"
+}

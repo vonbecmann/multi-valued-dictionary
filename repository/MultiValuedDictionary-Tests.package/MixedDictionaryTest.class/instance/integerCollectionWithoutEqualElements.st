@@ -3,7 +3,10 @@ integerCollectionWithoutEqualElements
 	" return a collection of integer without equal elements"
 
 	^ (self newEmptyDict)
-		add: #a -> {0 . 1};
-		add: #b -> #(2 3);
-		add: #c -> {4 . 5};
+		add: #a -> 0;
+		add: #a -> 1;
+		add: #b -> 2;
+		add: #b -> 3;				
+		add: #c -> 4;
+		add: #c -> 5;		
 		yourself

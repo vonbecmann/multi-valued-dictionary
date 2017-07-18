@@ -8,6 +8,6 @@ declare: key from: aDictionary
 		ifTrue: [ ^ self ].
 	(aDictionary includesKey: key)
 		ifTrue: [ 
-			self add: (aDictionary associationAt: key).
+			self at: key putAll: (aDictionary associationAt: key) value.
 			aDictionary removeKey: key ]
-		ifFalse: [ self add: key -> nil ]
+		ifFalse: [ self at: key put: nil ]

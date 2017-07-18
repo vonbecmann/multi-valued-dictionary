@@ -8,6 +8,5 @@ testAddWithKeyAlreadyIn
 	
 	self assert: result = association.
 	self 
-		assertCollection: (dictionary at: association key) 
-		hasSameElements: (self wrap: association value).
-	self assert: dictionary size = oldSize .
+		assert: ((dictionary at: association key) includes: association value).
+	self assert: (dictionary size = (oldSize + 1)).
