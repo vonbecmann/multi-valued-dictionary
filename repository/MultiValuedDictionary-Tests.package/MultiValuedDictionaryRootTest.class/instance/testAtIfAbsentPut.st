@@ -5,9 +5,7 @@ testAtIfAbsentPut
 	association := collection associations anyOne.
 	
 	collection at: association key ifAbsentPut: [ 888 ].
-	self assert: (collection at: association key) = association value.
+	self assert: ((collection at: association key) includes: association value).
 	
 	collection at: self keyNotIn  ifAbsentPut: [ 888 ].
-	self 
-		assertCollection: (collection at: self keyNotIn)
-	 	hasSameElements: (self wrap: 888).
+	self assert: ((collection at: self keyNotIn) includes: 888).

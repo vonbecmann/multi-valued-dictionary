@@ -1,8 +1,11 @@
 {
+	"instance" : {
+		"gtInspectorKeysIn:" : "BernardoContreras 9/2/2016 21:02",
+		"gtDisplayOn:" : "BernardoContreras 9/2/2016 21:02",
+		"gtInspectorItemsIn:" : "BernardoContreras 9/2/2016 21:02"
+	},
 	"class" : {
 		"gtExample" : "BernardoContreras 9/2/2016 21:03",
-		"gtExampleAnother" : "BernardoContreras 9/2/2016 21:03" },
-	"instance" : {
-		"gtDisplayOn:" : "BernardoContreras 9/2/2016 21:02",
-		"gtInspectorItemsIn:" : "BernardoContreras 9/2/2016 21:02",
-		"gtInspectorKeysIn:" : "BernardoContreras 9/2/2016 21:02" } }
+		"gtExampleAnother" : "BernardoContreras 9/2/2016 21:03"
+	}
+}

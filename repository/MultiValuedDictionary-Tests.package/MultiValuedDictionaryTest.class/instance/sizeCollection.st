@@ -1,5 +1,6 @@
 requirements
 sizeCollection
 	^ (self newEmptyDict)
-		add: #B -> {3 . 7};
+		add: #B -> 3;
+		add: #B -> 7;
 		yourself

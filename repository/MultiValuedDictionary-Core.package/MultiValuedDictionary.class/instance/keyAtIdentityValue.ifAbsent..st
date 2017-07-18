@@ -4,7 +4,7 @@ keyAtIdentityValue: value ifAbsent: exceptionBlock
 	there is none, answer the result of evaluating exceptionBlock.
 	Note: There can be multiple keys with the same value. Only one is returned."
 
-	self
+	dictionary 
 		associationsDo: [ :association | 
 			association value
 				do: [ :eachValue | value == eachValue ifTrue: [ ^ association key ] ] ].
