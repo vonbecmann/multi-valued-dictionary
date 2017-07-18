@@ -10,7 +10,7 @@ comparing
 		ifFalse: [ ^ false ].
 	self size = aMultiValuedDictionary size
 		ifFalse: [ ^ false ].
-	self
+	dictionary 
 		associationsDo: [ :assoc | 
 			(aMultiValuedDictionary at: assoc key ifAbsent: [ ^ false ]) = assoc value
 				ifFalse: [ ^ false ] ].

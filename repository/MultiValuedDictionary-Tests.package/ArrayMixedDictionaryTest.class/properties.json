@@ -1,15 +1,14 @@
 {
-	"category" : "MultiValuedDictionary-Tests",
-	"classinstvars" : [
-		 ],
-	"classvars" : [
-		 ],
 	"commentStamp" : "BernardoContreras 9/3/2016 19:09",
+	"super" : "ArrayMultiValuedDictionaryRootTest",
+	"category" : "MultiValuedDictionary-Tests",
+	"classinstvars" : [ ],
+	"pools" : [ ],
+	"classvars" : [ ],
 	"instvars" : [
 		"nonEmptyDict",
-		"duplicatedElement" ],
+		"duplicatedElement"
+	],
 	"name" : "ArrayMixedDictionaryTest",
-	"pools" : [
-		 ],
-	"super" : "ArrayMultiValuedDictionaryRootTest",
-	"type" : "normal" }
+	"type" : "normal"
+}

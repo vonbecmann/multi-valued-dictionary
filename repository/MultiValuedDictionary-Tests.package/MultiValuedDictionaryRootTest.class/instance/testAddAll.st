@@ -12,7 +12,8 @@ testAddAll
 	result := collection addAll: collectionToAdd .
 	
 	self assert: result = collectionToAdd .
-	"  the association with the key already in should have replaced the oldest :"
-	self assert: collection  size = (oldSize + 1).
+	"  the association with the key already in should not have replaced the oldest :"
+	self assert: collection  size = (oldSize + 2).
 	
-	result associationsDo: [:assoc | self assert: (collection at:  (assoc key) ) = assoc value].
+	result 
+		associationsDo: [:assoc | self assert: ((collection at: (assoc key)) includes: assoc value)].
