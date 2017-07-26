@@ -7,7 +7,5 @@ testAddWithKeyNotIn
 	result := dictionary add: association.
 	
 	self assert: result = association.
-	self 
-		assertCollection: (dictionary at: association key) 
-		hasSameElements: (self wrap: association value).
+	self assert: ((dictionary at: association key) includes: association value).
 	self assert: dictionary size = (oldSize + 1).
