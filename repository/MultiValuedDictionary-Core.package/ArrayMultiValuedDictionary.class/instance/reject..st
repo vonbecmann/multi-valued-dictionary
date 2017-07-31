@@ -8,7 +8,7 @@ reject: aBlock
 
 	| newCollection |
 	newCollection := self copyEmpty.
-	self
+	dictionary
 		associationsDo: [ :association | 
 			| newValues |
 			newValues := association value reject: aBlock.

@@ -6,7 +6,7 @@ select: selectBlock thenCollect: collectBlock
 
 	| newCollection |
 	newCollection := self copyEmpty.
-	self
+	dictionary 
 		associationsDo: [ :association | 
 			| newValues |
 			newValues := association value select: selectBlock thenCollect: collectBlock.

@@ -6,7 +6,7 @@ reject: rejectBlock thenCollect: collectBlock
 
 	| newCollection |
 	newCollection := self copyEmpty.
-	self
+	dictionary 
 		associationsDo: [ :association | 
 			| newValues |
 			newValues := association value reject: rejectBlock thenCollect: collectBlock.
