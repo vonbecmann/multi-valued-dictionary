@@ -6,6 +6,6 @@ keyAtIdentityValue: value ifAbsent: exceptionBlock
 
 	self
 		associationsDo: [ :association | 
-			association value
-				do: [ :eachValue | value == eachValue ifTrue: [ ^ association key ] ] ].
+			association value == value
+				ifTrue: [ ^ association key ] ].
 	^ exceptionBlock value

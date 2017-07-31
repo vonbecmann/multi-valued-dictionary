@@ -4,8 +4,11 @@ nonEmptyDifferentFromNonEmptyDict
 
 	^ self newEmptyDict
 		add: #h -> 101;
-		add: #i -> #(102 103);
-		add: #j -> {104 . 105};
-		add: #k -> {106 . 107};
+		add: #i -> 102;
+		add: #i -> 103;
+		add: #j -> 104;
+		add: #j -> 105;
+		add: #k -> 106;
+		add: #k -> 107;
 		add: #l -> 108;
 		yourself

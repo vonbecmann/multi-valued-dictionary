@@ -1,4 +1,4 @@
 adding
 add: anAssociation
-	dictionary at: anAssociation key put: (self wrap: anAssociation value).
+	self at: anAssociation key put: anAssociation value.
 	^ anAssociation

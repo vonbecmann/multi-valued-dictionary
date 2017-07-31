@@ -1,5 +1,5 @@
 requirements
 nonEmpty1Element
-	^ (self newEmptyDict)
+	^ self newEmptyDict
 		add: #a -> 5;
 		yourself
