@@ -5,18 +5,7 @@ gtInspectorItemsIn: composite
 		title: 'Items';
 		display: [ self associations ];
 		column: 'Key' evaluated: [ :each | GTObjectPrinter new asTruncatedTextFrom: each key ];
-		column: 'Values'
-			evaluated: [ :each | 
-			| limitedString limit |
-			limit := 100.
-			limitedString := String
-				streamContents: [ :s | each value printElementsOn: s ]
-				limitedTo: limit.
-			GTObjectPrinter new
-				asNonTruncatedTextFrom:
-					(limitedString size < limit
-						ifTrue: [ limitedString ]
-						ifFalse: [ limitedString , ' ...' ]) ];
+		column: 'Value' evaluated: [ :each | GTObjectPrinter new asTruncatedTextFrom: each value ];
 		send: [ :each | each value ];
 		showOnly: 50;
 		yourself
