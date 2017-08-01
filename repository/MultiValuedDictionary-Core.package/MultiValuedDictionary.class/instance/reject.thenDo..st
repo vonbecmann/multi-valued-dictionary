@@ -5,7 +5,9 @@ reject: rejectBlock thenDo: doBlock
 	"Do not create the intermediate collection.
 	 Optimized for efficiency."
 
-	self
-		do: [ :each | 
-			(rejectBlock value: each)
-				ifFalse: [ doBlock value: each ] ]
+	dictionary
+		associationsDo: [ :association | 
+			association value
+				do: [ :eachValue | 
+					(rejectBlock value: eachValue)
+						ifFalse: [ doBlock value: eachValue ] ] ]
