@@ -4,8 +4,4 @@ at: key ifAbsentPut: aBlock
 	If key is not included in the receiver store the result 
 	of evaluating aBlock as new value."
 
-	| existingValues |
-	existingValues := dictionary at: key ifAbsent: nil.
-	^ existingValues
-		ifNil: [ dictionary at: key put: (collectionClass with: aBlock value) ]
-		ifNotNil: [ existingValues ]
+	^ dictionary at: key ifAbsentPut: [ collectionClass with: aBlock value ]

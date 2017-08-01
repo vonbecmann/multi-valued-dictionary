@@ -25,8 +25,8 @@ testAtIfPresentIfAbsentPut
 				ifAbsentPut: [ Error signal ]) = #present.
 	self
 		assert:
-			(collection
+			((collection
 				at: self keyNotIn
 				ifPresent: [ :value | Error signal ]
-				ifAbsentPut: [ self valueNotIn ]) = self valueNotIn.
-	self assert: (collection at: self keyNotIn) = self valueNotIn
+				ifAbsentPut: [ self valueNotIn ]) includes: self valueNotIn).
+	self assert: ((collection at: self keyNotIn) includes: self valueNotIn)
