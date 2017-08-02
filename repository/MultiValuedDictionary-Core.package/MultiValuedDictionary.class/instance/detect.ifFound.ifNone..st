@@ -6,7 +6,7 @@ detect: aBlock ifFound: foundBlock ifNone: exceptionBlock
 	If none evaluate to true, then evaluate exceptionBlock."
 
 	self
-		do: [ :each | 
+		valuesDo: [ :each | 
 			(aBlock value: each)
 				ifTrue: [ ^ foundBlock cull: each ] ].
 	^ exceptionBlock value
