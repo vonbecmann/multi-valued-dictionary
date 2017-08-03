@@ -6,4 +6,7 @@ at: key ifPresent: aPresentBlock ifAbsentPut: anAbsentBlock
 	Otherwise store and return the result of evaluating the second block as the
 	new value of the key."
 
-	^ dictionary at: key ifPresent: aPresentBlock ifAbsentPut: anAbsentBlock
+	^ dictionary
+		at: key
+		ifPresent: aPresentBlock
+		ifAbsentPut: [ Array with: anAbsentBlock value ]
