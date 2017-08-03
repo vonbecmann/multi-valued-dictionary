@@ -4,8 +4,10 @@ keyAtValue: value ifAbsent: exceptionBlock
 	there is none, answer the result of evaluating exceptionBlock.
 	: Use =, not ==, so strings like 'this' can be found.  Note that MethodDictionary continues to use == so it will be fast."
 
-	self
+	dictionary
 		associationsDo: [ :association | 
-			association value = value
-				ifTrue: [ ^ association key ] ].
+			association value
+				do: [ :eachValue | 
+					value = eachValue
+						ifTrue: [ ^ association key ] ] ].
 	^ exceptionBlock value

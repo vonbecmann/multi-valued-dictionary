@@ -2,4 +2,6 @@ removing
 keysAndValuesRemove: keyValueBlock
 	"Removes all entries for which keyValueBlock returns true."
 
-	dictionary keysAndValuesRemove: keyValueBlock
+	"i don't know how to implement this feature."
+
+	self shouldNotImplement
