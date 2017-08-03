@@ -6,8 +6,4 @@ reject: rejectBlock thenDo: doBlock
 	 Optimized for efficiency."
 
 	dictionary
-		associationsDo: [ :association | 
-			association value
-				do: [ :eachValue | 
-					(rejectBlock value: eachValue)
-						ifFalse: [ doBlock value: eachValue ] ] ]
+		associationsDo: [ :association | association value reject: rejectBlock thenDo: doBlock ]

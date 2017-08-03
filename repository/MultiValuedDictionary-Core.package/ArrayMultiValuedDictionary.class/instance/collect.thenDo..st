@@ -2,4 +2,5 @@ enumerating
 collect: collectBlock thenDo: doBlock
 	"Utility method to improve readability."
 
-	self valuesDo: [ :each | doBlock value: (collectBlock value: each) ]
+	dictionary
+		associationsDo: [ :association | association value collect: collectBlock thenDo: doBlock ]

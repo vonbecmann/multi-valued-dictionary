@@ -4,8 +4,4 @@ select: selectBlock thenDo: doBlock
 	Do not create the intermediate collection."
 
 	dictionary
-		associationsDo: [ :association | 
-			association value
-				do: [ :eachValue | 
-					(selectBlock value: eachValue)
-						ifTrue: [ doBlock value: eachValue ] ] ]
+		associationsDo: [ :association | association value select: selectBlock thenDo: doBlock ]
