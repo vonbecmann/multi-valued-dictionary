@@ -6,7 +6,8 @@ at: key ifPresent: aPresentBlock ifAbsentPut: anAbsentBlock
 	Otherwise store and return the result of evaluating the second block as the
 	new value of the key."
 
-	^ dictionary
-		at: key
-		ifPresent: aPresentBlock
-		ifAbsentPut: [ collectionClass with: anAbsentBlock value ]
+	| existingValues |
+	existingValues := dictionary at: key ifAbsent: nil.
+	^ existingValues
+		ifNil: [ dictionary at: key put: (collectionClass with: anAbsentBlock value) ]
+		ifNotNil: [ aPresentBlock cull: existingValues ]
