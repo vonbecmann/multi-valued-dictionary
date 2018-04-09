@@ -1,3 +1,0 @@
-removing
-removeAll
-	dictionary removeAll

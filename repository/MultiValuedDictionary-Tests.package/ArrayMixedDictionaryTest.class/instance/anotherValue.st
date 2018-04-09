@@ -1,3 +1,0 @@
-requirements
-anotherValue
-	^ 63

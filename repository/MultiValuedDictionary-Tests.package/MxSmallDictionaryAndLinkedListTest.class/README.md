@@ -1,3 +1,0 @@
-dictionary: SmallDictionary 
-collection: LinkedList 
-
