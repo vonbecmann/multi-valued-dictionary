@@ -1,3 +1,0 @@
-private
-dictionaryClass
-	^ dictionary class

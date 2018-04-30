@@ -1,3 +1,0 @@
-requirements
-valueNotInNonEmpty
-	^ self elementNotIn
