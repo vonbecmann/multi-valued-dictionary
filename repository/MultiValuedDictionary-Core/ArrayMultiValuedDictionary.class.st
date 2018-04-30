@@ -1103,10 +1103,11 @@ ArrayMultiValuedDictionary >> union: aCollection [
 ArrayMultiValuedDictionary >> values [
 	"Answer a Collection containing the receiver's values."
 
-	| out |
-	out := (Array new: self size) writeStream.
-	self valuesDo: [ :value | out nextPut: value ].
-	^ out contents
+	| newArray index |
+	newArray := Array new: self size.
+	index := 0.
+	self valuesDo: [ :each | newArray at: (index := index + 1) put: each ].
+	^ newArray
 ]
 
 { #category : #enumerating }
