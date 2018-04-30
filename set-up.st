@@ -6,7 +6,7 @@ Gofer it
 
 Metacello new
     baseline: 'MultiValuedDictionary';
-    repository: 'filetree:///home/vonbecmann/workspaces/multi-valued-dictionary/repository';
+    repository: 'tonel:///home/vonbecmann/workspaces/multi-valued-dictionary/repository';
     load.
 
 
