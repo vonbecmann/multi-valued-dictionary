@@ -53,6 +53,19 @@ ArrayMultiValuedDictionary >> gtInspectorItemsIn: composite [
 ]
 
 { #category : #'*MultiValuedDictionary-InspectorExtensions' }
+ArrayMultiValuedDictionary >> gtInspectorKeyValuesIn: composite [
+	<gtInspectorPresentationOrder: 2>
+	^ composite fastTable
+		title: 'Key->Values';
+		display: [ dictionary associations ];
+		column: 'Key' evaluated: [ :each | GTObjectPrinter asTruncatedTextFrom: each key ];
+		column: 'Value' evaluated: [ :each | GTObjectPrinter asTruncatedTextFrom: each value ];
+		send: [ :each | each value ];
+		showOnly: 50;
+		yourself
+]
+
+{ #category : #'*MultiValuedDictionary-InspectorExtensions' }
 ArrayMultiValuedDictionary >> gtInspectorKeysIn: composite [
 	<gtInspectorPresentationOrder: 1>
 	^ composite list
