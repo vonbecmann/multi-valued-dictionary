@@ -677,6 +677,23 @@ ArrayMultiValuedDictionaryRootTest >> testNew [
 	self should: [ self targetClass new ] raise: Error
 ]
 
+{ #category : #'tests - printing' }
+ArrayMultiValuedDictionaryRootTest >> testPrintOnDelimiter [
+	
+	| result allElementsAsString tmp |
+	
+	result := String streamContents: [ :aStream |
+		tmp := OrderedCollection new.
+		self nonEmpty do: [:each | tmp add:(String streamContents: [:s | s print: each ])].
+		self nonEmpty printOn: aStream delimiter: ', ' ].
+	
+	allElementsAsString := (result findBetweenSubstrings: ', ').
+	
+	1 to: allElementsAsString size do:
+		[:i | 
+		self assert: (tmp occurrencesOf:(allElementsAsString at:i)) equals: (allElementsAsString  occurrencesOf:(allElementsAsString at:i)) ].
+]
+
 { #category : #tests }
 ArrayMultiValuedDictionaryRootTest >> testRemoveAll [
 	"Allows one to remove all elements of a collection"

@@ -916,7 +916,7 @@ ArrayMultiValuedDictionary >> printOn: aStream delimiter: delimString [
 
 	self
 		do: [ :elem | aStream print: elem ]
-		separatedBy: [ aStream print: delimString ]
+		separatedBy: [ aStream nextPutAll: delimString ]
 ]
 
 { #category : #printing }
@@ -936,8 +936,8 @@ ArrayMultiValuedDictionary >> printOn: aStream delimiter: delimString last: last
 			aStream print: elem ]
 		separatedBy: [ 
 			n = sz
-				ifTrue: [ aStream print: lastDelimString ]
-				ifFalse: [ aStream print: delimString ] ]
+				ifTrue: [ aStream nextPutAll: lastDelimString ]
+				ifFalse: [ aStream nextPutAll: delimString ] ]
 ]
 
 { #category : #private }
