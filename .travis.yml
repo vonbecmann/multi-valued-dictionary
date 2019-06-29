@@ -5,6 +5,4 @@ os:
   - linux
 
 smalltalk:
-  - Pharo-6.1
-  
-
+  - Pharo32-7.0
