@@ -1,4 +1,4 @@
-a crappy multi-valued dictionary [[https://travis-ci.org/vonbecmann/multi-valued-dictionary.svg?branch=master][https://travis-ci.org/vonbecmann/multi-valued-dictionary]]
+a crappy multi-valued dictionary [[https://travis-ci.org/vonbecmann/multi-valued-dictionary][https://travis-ci.org/vonbecmann/multi-valued-dictionary.svg?branch=pharo7]]
 
 
 where each Association is like
