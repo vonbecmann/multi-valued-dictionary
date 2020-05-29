@@ -8,7 +8,7 @@ Class {
 	#instVars : [
 		'dictionary'
 	],
-	#category : 'MultiValuedDictionary-Core'
+	#category : #'MultiValuedDictionary-Core'
 }
 
 { #category : #'instance creation' }
@@ -235,6 +235,15 @@ ArrayMultiValuedDictionary >> associationAt: key ifPresent: aBlock [
 	If key is not found, return the result of evaluating aBlock."
 
 	^ dictionary associationAt: key ifPresent: aBlock
+]
+
+{ #category : #accessing }
+ArrayMultiValuedDictionary >> associationAt: key ifPresent: aPresentBlock ifAbsent: anAbsentBlock [
+	"Lookup the given key in the receiver. If it is present, answer the
+	value of evaluating the first block optionally with the association for the key.
+	Otherwise answer the value of the second block."
+
+	^ dictionary associationAt: key ifPresent: aPresentBlock ifAbsent: anAbsentBlock
 ]
 
 { #category : #accessing }
