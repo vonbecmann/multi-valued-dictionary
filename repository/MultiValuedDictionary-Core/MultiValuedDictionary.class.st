@@ -295,8 +295,7 @@ MultiValuedDictionary >> associationsSelect: aBlock [
 				do: [ :eachValue | 
 					(aBlock value: association key -> eachValue)
 						ifTrue: [ newValues add: eachValue ] ].
-			newValues isEmpty
-				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
+			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection
 ]
 
@@ -402,8 +401,7 @@ MultiValuedDictionary >> collect: aBlock [
 			| newValues |
 			newValues := collectionClass new.
 			association value do: [ :eachValue | newValues add: (aBlock value: eachValue) ].
-			newValues isEmpty
-				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
+			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection
 ]
 
@@ -434,8 +432,7 @@ MultiValuedDictionary >> collect: collectBlock thenReject: rejectBlock [
 					newValue := collectBlock value: eachValue.
 					(rejectBlock value: newValue)
 						ifFalse: [ newValues add: newValue ] ].
-			newValues isEmpty
-				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
+			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection
 ]
 
@@ -457,8 +454,7 @@ MultiValuedDictionary >> collect: collectBlock thenSelect: selectBlock [
 					| newValue |
 					newValue := collectBlock value: eachValue.
 					(selectBlock value: newValue) ifTrue: [ newValues add: newValue ] ].
-			newValues isEmpty
-				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
+			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection
 ]
 
@@ -1004,8 +1000,7 @@ MultiValuedDictionary >> reject: aBlock [
 				do: [ :eachValue | 
 					(aBlock value: eachValue)
 						ifFalse: [ newValues add: eachValue ] ].
-			newValues isEmpty
-				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
+			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection
 ]
 
@@ -1026,8 +1021,7 @@ MultiValuedDictionary >> reject: rejectBlock thenCollect: collectBlock [
 				do: [ :eachValue | 
 					(rejectBlock value: eachValue)
 						ifFalse: [ newValues add: (collectBlock value: eachValue) ] ].
-			newValues isEmpty
-				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
+			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection
 ]
 
@@ -1090,8 +1084,7 @@ MultiValuedDictionary >> select: aBlock [
 				do: [ :eachValue | 
 					(aBlock value: eachValue)
 						ifTrue: [ newValues add: eachValue ] ].
-			newValues isEmpty
-				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
+			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection
 ]
 
@@ -1111,8 +1104,7 @@ MultiValuedDictionary >> select: selectBlock thenCollect: collectBlock [
 				do: [ :eachValue | 
 					(selectBlock value: eachValue)
 						ifTrue: [ newValues add: (collectBlock value: eachValue) ] ].
-			newValues isEmpty
-				ifFalse: [ newCollection privateAt: association key put: newValues ] ].
+			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
 	^ newCollection
 ]
 
