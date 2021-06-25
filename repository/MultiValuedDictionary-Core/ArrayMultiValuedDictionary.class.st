@@ -571,8 +571,7 @@ ArrayMultiValuedDictionary >> do: aBlock without: anItem [
 
 { #category : #private }
 ArrayMultiValuedDictionary >> emptyCheck [
-	self isEmpty
-		ifTrue: [ self errorEmptyCollection ]
+	self ifEmpty: [ self errorEmptyCollection ]
 ]
 
 { #category : #private }
