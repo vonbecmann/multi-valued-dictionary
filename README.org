@@ -1,0 +1,18 @@
+* multi-valued dictionary 
+  a crappy multi-valued dictionary [[https://github.com/vonbecmann/multi-valued-dictionary/actions/workflows/CI.yml][https://github.com/vonbecmann/multi-valued-dictionary/actions/workflows/CI.yml/badge.svg]] 
+where each Association is like
+
+- key -> a collection of values
+
+here's an article https://en.wikipedia.org/wiki/Multivalued_function
+
+To install it do
+#+BEGIN_SRC
+Metacello new
+   baseline: 'MultiValuedDictionary';
+   repository: 'github://vonbecmann/multi-valued-dictionary/repository';
+   load.
+#+END_SRC
+
+
+
