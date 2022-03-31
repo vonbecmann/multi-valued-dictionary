@@ -15,7 +15,7 @@ Class {
 		'nonEmptyDict',
 		'duplicatedElement'
 	],
-	#category : 'MultiValuedDictionary-Tests'
+	#category : #'MultiValuedDictionary-Tests'
 }
 
 { #category : #testing }
@@ -212,9 +212,9 @@ MixedDictionaryTest >> nonEmptyWithCopyNonIdentical [
 	" return a collection including elements for which copy is not identical to the initial element ( this is not the case of Integer )"
 
 	^ self newEmptyDict
-		add: #A -> 2.5;
-		add: #A -> 2.61;		
-		add: #b -> 3.5;
+		add: #A -> 'foo';
+		add: #A -> 'foo2';
+		add: #b -> 'bar';
 		yourself
 ]
 
