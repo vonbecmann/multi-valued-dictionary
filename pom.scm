@@ -1,3 +1,3 @@
-(pb:project 'spur32-stable-80-vm 'pharo-80)
+(pb:project 'pharo90-64-stable-vm 'pharo-90-64)
 
 
