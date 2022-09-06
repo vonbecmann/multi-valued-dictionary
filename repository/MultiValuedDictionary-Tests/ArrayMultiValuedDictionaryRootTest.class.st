@@ -7,7 +7,7 @@ Class {
 	#superclass : #CollectionRootTest,
 	#traits : 'TIncludesTest + TDictionaryAddingTest + TDictionaryComparingTest + TDictionaryCopyingTest + TDictionaryEnumeratingTest + (TDictionaryPrintingTest - {#testPrintElementsOn. #testStoreOn}) + TDictionaryRemovingTest + (TPutBasicTest - {#testAtPutOutOfBounds}) + TAsStringCommaAndDelimiterTest + TPrintTest + TConvertTest + TConvertAsSortedTest + (TCopyTest - {#testCopyEmptyWithout. #testCopyNonEmptyWithout. #testCopyNonEmptyWithoutNotIncluded}) + TSetArithmetic + TDictionaryIncludesWithIdentityCheckTest + TDictionaryValueAccessTest + TDictionaryKeysValuesAssociationsAccess + TDictionaryKeyAccessTest + TDictionaryAssociationAccessTest + TStructuralEqualityTest + TOccurrencesForMultiplinessTest',
 	#classTraits : 'TIncludesTest classTrait + TDictionaryAddingTest classTrait + TDictionaryComparingTest classTrait + TDictionaryCopyingTest classTrait + TDictionaryEnumeratingTest classTrait + TDictionaryPrintingTest classTrait + TDictionaryRemovingTest classTrait + TPutBasicTest classTrait + TAsStringCommaAndDelimiterTest classTrait + TPrintTest classTrait + TConvertTest classTrait + TConvertAsSortedTest classTrait + TCopyTest classTrait + TSetArithmetic classTrait + TDictionaryIncludesWithIdentityCheckTest classTrait + TDictionaryValueAccessTest classTrait + TDictionaryKeysValuesAssociationsAccess classTrait + TDictionaryKeyAccessTest classTrait + TDictionaryAssociationAccessTest classTrait + TStructuralEqualityTest classTrait + TOccurrencesForMultiplinessTest classTrait',
-	#category : 'MultiValuedDictionary-Tests'
+	#category : #'MultiValuedDictionary-Tests'
 }
 
 { #category : #testing }
@@ -110,6 +110,42 @@ ArrayMultiValuedDictionaryRootTest >> testAddWithKeyNotIn [
 { #category : #tests }
 ArrayMultiValuedDictionaryRootTest >> testAnyOneWithEmptyDict [
 	self should: [ self emptyDict anyOne ] raise: Error
+]
+
+{ #category : #'tests - as string comma delimiter sequenceable' }
+ArrayMultiValuedDictionaryRootTest >> testAsStringOnDelimiterLastMore [
+
+	| delim multiItemStream result last allElementsAsString tmp |
+	delim := ', '.
+	last := ' and '.
+	result := ''.
+	tmp := self nonEmpty collect: [ :each | each asString ].
+	multiItemStream := ReadWriteStream on: result.
+	self nonEmpty asStringOn: multiItemStream delimiter: delim last: last.
+	result := multiItemStream contents.
+	allElementsAsString := result findBetweenSubstrings: delim.
+	tmp do: [ :each | 
+		self assert: (tmp occurrencesOf: each) = (allElementsAsString occurrencesOf: each) ].
+	self assert: (allElementsAsString at: allElementsAsString size - 1) = 'and'
+]
+
+{ #category : #'tests - as string comma delimiter sequenceable' }
+ArrayMultiValuedDictionaryRootTest >> testAsStringOnDelimiterMore [
+
+	| delim multiItemStream result allElementsAsString tmp |
+	
+	
+	delim := ', '.
+	result:=''.
+	tmp:= self nonEmpty collect:[:each | each asString].
+	multiItemStream := ReadWriteStream on:result.
+	self nonEmpty  asStringOn: multiItemStream delimiter: delim.
+	result := multiItemStream contents.
+	allElementsAsString := (result findBetweenSubstrings: delim ).
+	tmp do:
+		[:each |
+		self assert: (tmp occurrencesOf: each)=(allElementsAsString occurrencesOf: each).
+		].
 ]
 
 { #category : #'tests - dictionary assocition access' }
