@@ -535,6 +535,22 @@ ArrayMultiValuedDictionary >> difference: aCollection [
 				ifFalse: [ false ] ]
 ]
 
+{ #category : #displaying }
+ArrayMultiValuedDictionary >> displayStringOn: s [
+
+	self printNameOn: s.
+	s
+		space;
+		nextPut: $[;
+		nextPutAll: self size asString;
+		nextPutAll: (self size = 1
+				 ifTrue: [ ' item' ]
+				 ifFalse: [ ' items' ]);
+		nextPut: $];
+		space.
+	self printElementsOn: s
+]
+
 { #category : #enumerating }
 ArrayMultiValuedDictionary >> do: aBlock [
 	"Evaluate aBlock with each of the receiver's elements as the argument."
