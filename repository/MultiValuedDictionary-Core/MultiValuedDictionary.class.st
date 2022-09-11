@@ -17,7 +17,7 @@ Class {
 		'dictionary',
 		'collectionClass'
 	],
-	#category : #'MultiValuedDictionary-Core'
+	#category : #'MultiValuedDictionary-Core-Public'
 }
 
 { #category : #'instance creation' }
