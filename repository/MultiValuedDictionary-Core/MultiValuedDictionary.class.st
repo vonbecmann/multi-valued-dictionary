@@ -55,8 +55,8 @@ MultiValuedDictionary >> = aMultiValuedDictionary [
 		ifFalse: [ ^ false ].
 	self size = aMultiValuedDictionary size
 		ifFalse: [ ^ false ].
-	dictionary 
-		associationsDo: [ :assoc | 
+	dictionary
+		associationsDo: [ :assoc |
 			(aMultiValuedDictionary at: assoc key ifAbsent: [ ^ false ]) = assoc value
 				ifFalse: [ ^ false ] ].
 	^ true
@@ -88,7 +88,7 @@ MultiValuedDictionary >> allSatisfy: aBlock [
 { #category : #accessing }
 MultiValuedDictionary >> anyOne [
 	"Answer a representative sample of the receiver. This method can
-	be helpful when needing to preinfer the nature of the contents of 
+	be helpful when needing to preinfer the nature of the contents of
 	semi-homogeneous collections."
 
 	self emptyCheck.
@@ -109,7 +109,7 @@ MultiValuedDictionary >> anySatisfy: aBlock [
 MultiValuedDictionary >> asArray [
 	"Answer an Array whose elements are the elements of the receiver.
 	Implementation note: Cannot use ''Array withAll: self'' as that only
-	works for SequenceableCollections which support the replacement 
+	works for SequenceableCollections which support the replacement
 	primitive."
 
 	| newArray index |
@@ -130,7 +130,7 @@ MultiValuedDictionary >> asBag [
 MultiValuedDictionary >> asByteArray [
 	"Answer a ByteArray whose elements are the elements of the receiver.
 	Implementation note: Cannot use ''ByteArray withAll: self'' as that only
-	works for SequenceableCollections which support the replacement 
+	works for SequenceableCollections which support the replacement
 	primitive."
 
 	| array index |
@@ -218,10 +218,10 @@ MultiValuedDictionary >> asStringOn: aStream delimiter: delimString last: lastDe
 	n := 1.
 	sz := self size.
 	self
-		do: [ :elem | 
+		do: [ :elem |
 			n := n + 1.
 			aStream nextPutAll: elem asString ]
-		separatedBy: [ 
+		separatedBy: [
 			aStream
 				nextPutAll:
 					(n = sz
@@ -270,12 +270,12 @@ MultiValuedDictionary >> associations [
 
 { #category : #enumerating }
 MultiValuedDictionary >> associationsDo: aBlock [
-	"Evaluate aBlock for each of the receiver's elements (key/value 
+	"Evaluate aBlock for each of the receiver's elements (key/value
 	associations)."
 
 	dictionary
 		associationsDo:
-			[ :association | 
+			[ :association |
 				association value do: [ :eachValue | aBlock value: (association key -> eachValue) ] ]
 ]
 
@@ -288,11 +288,11 @@ MultiValuedDictionary >> associationsSelect: aBlock [
 	| newCollection |
 	newCollection := self copyEmpty.
 	dictionary
-		associationsDo: [ :association | 
+		associationsDo: [ :association |
 			| newValues |
 			newValues := collectionClass new.
 			association value
-				do: [ :eachValue | 
+				do: [ :eachValue |
 					(aBlock value: association key -> eachValue)
 						ifTrue: [ newValues add: eachValue ] ].
 			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
@@ -316,8 +316,8 @@ MultiValuedDictionary >> at: key ifAbsent: aBlock [
 
 { #category : #accessing }
 MultiValuedDictionary >> at: key ifAbsentPut: aBlock [
-	"Return the value at the given key. 
-	If key is not included in the receiver store the result 
+	"Return the value at the given key.
+	If key is not included in the receiver store the result
 	of evaluating aBlock as new value."
 
 	^ dictionary at: key ifAbsentPut: [ collectionClass with: aBlock value ]
@@ -325,8 +325,8 @@ MultiValuedDictionary >> at: key ifAbsentPut: aBlock [
 
 { #category : #accessing }
 MultiValuedDictionary >> at: key ifAbsentPutAll: aBlock [
-	"Return the value at the given key. 
-	If key is not included in the receiver store the result 
+	"Return the value at the given key.
+	If key is not included in the receiver store the result
 	of evaluating aBlock as new value."
 
 	^ dictionary at: key ifAbsentPut: [ collectionClass withAll: aBlock value ]
@@ -396,8 +396,8 @@ MultiValuedDictionary >> collect: aBlock [
 
 	| newCollection |
 	newCollection := self copyEmpty.
-	dictionary 
-		associationsDo: [ :association | 
+	dictionary
+		associationsDo: [ :association |
 			| newValues |
 			newValues := collectionClass new.
 			association value do: [ :eachValue | newValues add: (aBlock value: eachValue) ].
@@ -423,11 +423,11 @@ MultiValuedDictionary >> collect: collectBlock thenReject: rejectBlock [
 	| newCollection |
 	newCollection := self copyEmpty.
 	dictionary
-		associationsDo: [ :association | 
+		associationsDo: [ :association |
 			| newValues |
 			newValues := collectionClass new.
 			association value
-				do: [ :eachValue | 
+				do: [ :eachValue |
 					| newValue |
 					newValue := collectBlock value: eachValue.
 					(rejectBlock value: newValue)
@@ -446,11 +446,11 @@ MultiValuedDictionary >> collect: collectBlock thenSelect: selectBlock [
 	| newCollection |
 	newCollection := self copyEmpty.
 	dictionary
-		associationsDo: [ :association | 
+		associationsDo: [ :association |
 			| newValues |
 			newValues := collectionClass new.
 			association value
-				do: [ :eachValue | 
+				do: [ :eachValue |
 					| newValue |
 					newValue := collectBlock value: eachValue.
 					(selectBlock value: newValue) ifTrue: [ newValues add: newValue ] ].
@@ -479,7 +479,7 @@ MultiValuedDictionary >> copyWith: newElement [
 
 { #category : #copying }
 MultiValuedDictionary >> copyWithoutAll: aCollection [
-	"Answer a copy of the receiver that does not contain any elements 
+	"Answer a copy of the receiver that does not contain any elements
 	equal to those in aCollection."
 
 	^ self reject: [ :each | aCollection includes: each ]
@@ -487,14 +487,14 @@ MultiValuedDictionary >> copyWithoutAll: aCollection [
 
 { #category : #adding }
 MultiValuedDictionary >> declare: key from: aDictionary [
-	"Add key to the receiver. If key already exists, do nothing. If aDictionary 
-	includes key, then remove it from aDictionary and use its association as 
+	"Add key to the receiver. If key already exists, do nothing. If aDictionary
+	includes key, then remove it from aDictionary and use its association as
 	the element of the receiver."
 
 	(self includesKey: key)
 		ifTrue: [ ^ self ].
 	(aDictionary includesKey: key)
-		ifTrue: [ 
+		ifTrue: [
 			self at: key putAll: (aDictionary associationAt: key) value.
 			aDictionary removeKey: key ]
 		ifFalse: [ self at: key put: nil ]
@@ -502,7 +502,7 @@ MultiValuedDictionary >> declare: key from: aDictionary [
 
 { #category : #enumerating }
 MultiValuedDictionary >> detect: aBlock [
-	"Evaluate aBlock with each of the receiver's elements as the argument. 
+	"Evaluate aBlock with each of the receiver's elements as the argument.
 	Answer the first element for which aBlock evaluates to true."
 
 	^ self detect: aBlock ifNone: [ self errorNotFound: aBlock ]
@@ -510,29 +510,29 @@ MultiValuedDictionary >> detect: aBlock [
 
 { #category : #enumerating }
 MultiValuedDictionary >> detect: aBlock ifFound: foundBlock [
-	"Evaluate aBlock with each of the receiver's elements as the argument.  
-	If some element evaluates aBlock to true, then cull this element into 
-	foundBlock. 
+	"Evaluate aBlock with each of the receiver's elements as the argument.
+	If some element evaluates aBlock to true, then cull this element into
+	foundBlock.
 	If no element matches the criteria then do nothing.
 	Always returns self to avoid misuse and a potential isNil check on the sender."
 
 	self
 		detect: aBlock
 		ifFound: foundBlock
-		ifNone: [ 
+		ifNone: [
 			"Do nothing on purpose"
 			 ]
 ]
 
 { #category : #enumerating }
 MultiValuedDictionary >> detect: aBlock ifFound: foundBlock ifNone: exceptionBlock [
-	"Evaluate aBlock with each of the receiver's elements as the argument.  
-	If some element evaluates aBlock to true, then cull this element into 
-	foundBlock and answer the result of this evaluation. 
+	"Evaluate aBlock with each of the receiver's elements as the argument.
+	If some element evaluates aBlock to true, then cull this element into
+	foundBlock and answer the result of this evaluation.
 	If none evaluate to true, then evaluate exceptionBlock."
 
 	self
-		valuesDo: [ :each | 
+		valuesDo: [ :each |
 			(aBlock value: each)
 				ifTrue: [ ^ foundBlock cull: each ] ].
 	^ exceptionBlock value
@@ -540,8 +540,8 @@ MultiValuedDictionary >> detect: aBlock ifFound: foundBlock ifNone: exceptionBlo
 
 { #category : #enumerating }
 MultiValuedDictionary >> detect: aBlock ifNone: exceptionBlock [
-	"Evaluate aBlock with each of the receiver's elements as the argument.  
-	Answer the first element for which aBlock evaluates to true. If none  
+	"Evaluate aBlock with each of the receiver's elements as the argument.
+	Answer the first element for which aBlock evaluates to true. If none
 	evaluate to true, then evaluate the argument, exceptionBlock."
 
 	^ self detect: aBlock ifFound: [ :element | element ] ifNone: exceptionBlock
@@ -560,7 +560,7 @@ MultiValuedDictionary >> difference: aCollection [
 	other := aCollection asSet.
 	duplicates := Set new.
 	^ self
-		select: [ :each | 
+		select: [ :each |
 			((other includes: each) not and: [ (duplicates includes: each) not ])
 				ifTrue: [ duplicates add: each. true ]
 				ifFalse: [ false ] ]
@@ -597,7 +597,7 @@ MultiValuedDictionary >> do: elementBlock separatedBy: separatorBlock [
 	| beforeFirst |
 	beforeFirst := true.
 	self
-		do: [ :each | 
+		do: [ :each |
 			beforeFirst
 				ifTrue: [ beforeFirst := false ]
 				ifFalse: [ separatorBlock value ].
@@ -606,7 +606,7 @@ MultiValuedDictionary >> do: elementBlock separatedBy: separatorBlock [
 
 { #category : #enumerating }
 MultiValuedDictionary >> do: aBlock without: anItem [
-	"Enumerate all elements in the receiver. 
+	"Enumerate all elements in the receiver.
 	Execute aBlock for those elements that are not equal to the given item"
 
 	self do: [ :each | anItem = each ifFalse: [ aBlock value: each ] ]
@@ -725,8 +725,8 @@ MultiValuedDictionary >> includesAny: aCollection [
 
 { #category : #testing }
 MultiValuedDictionary >> includesAssociation: anAssociation [
-	^ (dictionary 
-			associationAt: anAssociation key 
+	^ (dictionary
+			associationAt: anAssociation key
 			ifAbsent: [ ^ false ]) value includes: anAssociation value
 ]
 
@@ -754,10 +754,10 @@ MultiValuedDictionary >> initializeDictionary: aDictionary collectionClass: aCol
 
 { #category : #enumerating }
 MultiValuedDictionary >> inject: thisValue into: binaryBlock [
-	"Accumulate a running value associated with evaluating the argument, 
-	binaryBlock, with the current value of the argument, thisValue, and the 
-	receiver as block arguments. For instance, to sum the numeric elements 
-	of a collection, aCollection inject: 0 into: [:subTotal :next | subTotal + 
+	"Accumulate a running value associated with evaluating the argument,
+	binaryBlock, with the current value of the argument, thisValue, and the
+	receiver as block arguments. For instance, to sum the numeric elements
+	of a collection, aCollection inject: 0 into: [:subTotal :next | subTotal +
 	next]."
 
 	| nextValue |
@@ -774,7 +774,7 @@ MultiValuedDictionary >> intersection: aCollection [
 	other := aCollection asSet.
 	duplicates := Set new.
 	^ self
-		select: [ :each | 
+		select: [ :each |
 			((other includes: each) and: [ (duplicates includes: each) not ])
 				ifTrue: [ duplicates add: each. true ]
 				ifFalse: [ false ] ]
@@ -813,7 +813,7 @@ MultiValuedDictionary >> isNotEmpty [
 
 { #category : #accessing }
 MultiValuedDictionary >> keyAtIdentityValue: value [
-	"Answer the key that is the external name for the argument, value. If 
+	"Answer the key that is the external name for the argument, value. If
 	there is none, answer nil.
 	Note: There can be multiple keys with the same value. Only one is returned."
 
@@ -822,12 +822,12 @@ MultiValuedDictionary >> keyAtIdentityValue: value [
 
 { #category : #accessing }
 MultiValuedDictionary >> keyAtIdentityValue: value ifAbsent: exceptionBlock [
-	"Answer the key that is the external name for the argument, value. If 
+	"Answer the key that is the external name for the argument, value. If
 	there is none, answer the result of evaluating exceptionBlock.
 	Note: There can be multiple keys with the same value. Only one is returned."
 
-	dictionary 
-		associationsDo: [ :association | 
+	dictionary
+		associationsDo: [ :association |
 			association value
 				do: [ :eachValue | value == eachValue ifTrue: [ ^ association key ] ] ].
 	^ exceptionBlock value
@@ -835,7 +835,7 @@ MultiValuedDictionary >> keyAtIdentityValue: value ifAbsent: exceptionBlock [
 
 { #category : #accessing }
 MultiValuedDictionary >> keyAtValue: value [
-	"Answer the key that is the external name for the argument, value. If 
+	"Answer the key that is the external name for the argument, value. If
 	there is none, signal an error."
 
 	^ self keyAtValue: value ifAbsent: [ self errorValueNotFound: value ]
@@ -843,12 +843,12 @@ MultiValuedDictionary >> keyAtValue: value [
 
 { #category : #accessing }
 MultiValuedDictionary >> keyAtValue: value ifAbsent: exceptionBlock [
-	"Answer the key that is the external name for the argument, value. If 
+	"Answer the key that is the external name for the argument, value. If
 	there is none, answer the result of evaluating exceptionBlock.
 	: Use =, not ==, so strings like 'this' can be found.  Note that MethodDictionary continues to use == so it will be fast."
 
-	dictionary 
-		associationsDo: [ :association | 
+	dictionary
+		associationsDo: [ :association |
 			association value
 				do: [ :eachValue | value = eachValue ifTrue: [ ^ association key ] ] ].
 	^ exceptionBlock value
@@ -932,12 +932,12 @@ MultiValuedDictionary >> postCopy [
 MultiValuedDictionary >> printElementsOn: aStream [
 	aStream nextPut: $(.
 	self size > 100
-		ifTrue: [ 
+		ifTrue: [
 			aStream nextPutAll: 'size '.
 			self size printOn: aStream ]
-		ifFalse: [ 
+		ifFalse: [
 			self keysSortedSafely
-				do: [ :key | 
+				do: [ :key |
 					aStream
 						print: key;
 						nextPutAll: '->';
@@ -984,10 +984,10 @@ MultiValuedDictionary >> printOn: aStream delimiter: delimString last: lastDelim
 	n := 1.
 	sz := self size.
 	self
-		do: [ :elem | 
+		do: [ :elem |
 			n := n + 1.
 			aStream print: elem ]
-		separatedBy: [ 
+		separatedBy: [
 			n = sz
 				ifTrue: [ aStream nextPutAll: lastDelimString ]
 				ifFalse: [ aStream nextPutAll: delimString ] ]
@@ -1000,8 +1000,8 @@ MultiValuedDictionary >> privateAt: key put: anObject [
 
 { #category : #enumerating }
 MultiValuedDictionary >> reject: aBlock [
-	"Evaluate aBlock with each of the receiver's elements as the argument. 
-	Collect into a new collection like the receiver only those elements for 
+	"Evaluate aBlock with each of the receiver's elements as the argument.
+	Collect into a new collection like the receiver only those elements for
 	which aBlock evaluates to false. Answer the new collection."
 
 	"Uses do: for performance and to be sure that it is a collectionClass."
@@ -1009,11 +1009,11 @@ MultiValuedDictionary >> reject: aBlock [
 	| newCollection |
 	newCollection := self copyEmpty.
 	dictionary
-		associationsDo: [ :association | 
+		associationsDo: [ :association |
 			| newValues |
 			newValues := collectionClass new.
 			association value
-				do: [ :eachValue | 
+				do: [ :eachValue |
 					(aBlock value: eachValue)
 						ifFalse: [ newValues add: eachValue ] ].
 			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
@@ -1030,11 +1030,11 @@ MultiValuedDictionary >> reject: rejectBlock thenCollect: collectBlock [
 	| newCollection |
 	newCollection := self copyEmpty.
 	dictionary
-		associationsDo: [ :association | 
+		associationsDo: [ :association |
 			| newValues |
 			newValues := collectionClass new.
 			association value
-				do: [ :eachValue | 
+				do: [ :eachValue |
 					(rejectBlock value: eachValue)
 						ifFalse: [ newValues add: (collectBlock value: eachValue) ] ].
 			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
@@ -1077,8 +1077,8 @@ MultiValuedDictionary >> removeKey: key [
 
 { #category : #removing }
 MultiValuedDictionary >> removeKey: key ifAbsent: aBlock [
-	"Remove key (and its associated value) from the receiver. If key is not in 
-	the receiver, answer the result of evaluating aBlock. Otherwise, answer 
+	"Remove key (and its associated value) from the receiver. If key is not in
+	the receiver, answer the result of evaluating aBlock. Otherwise, answer
 	the value externally named by key."
 
 	^ dictionary removeKey: key ifAbsent: aBlock
@@ -1093,11 +1093,11 @@ MultiValuedDictionary >> select: aBlock [
 	| newCollection |
 	newCollection := self copyEmpty.
 	dictionary
-		associationsDo: [ :association | 
+		associationsDo: [ :association |
 			| newValues |
 			newValues := collectionClass new.
 			association value
-				do: [ :eachValue | 
+				do: [ :eachValue |
 					(aBlock value: eachValue)
 						ifTrue: [ newValues add: eachValue ] ].
 			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
@@ -1113,11 +1113,11 @@ MultiValuedDictionary >> select: selectBlock thenCollect: collectBlock [
 	| newCollection |
 	newCollection := self copyEmpty.
 	dictionary
-		associationsDo: [ :association | 
+		associationsDo: [ :association |
 			| newValues |
 			newValues := collectionClass new.
 			association value
-				do: [ :eachValue | 
+				do: [ :eachValue |
 					(selectBlock value: eachValue)
 						ifTrue: [ newValues add: (collectBlock value: eachValue) ] ].
 			newValues ifNotEmpty: [ newCollection privateAt: association key put: newValues ] ].
@@ -1148,13 +1148,13 @@ MultiValuedDictionary >> sumNumbers: aBlock [
 	"This is implemented using a variant of the normal inject:into: pattern
 	that is specific to handling numbers. aBlock is expected to return a number
 	for every element in the collection.
-	
-	Different from the sum: implementation, the default value is zero. While sum: is 
+
+	Different from the sum: implementation, the default value is zero. While sum: is
 	more general, sumNumbers: is meant to support the most often encountered use case of
 	dealing with numbers."
 
-	^ self 
-		inject: 0 
+	^ self
+		inject: 0
 		into: [ :sum :each |  sum + (aBlock value: each) ]
 ]
 
