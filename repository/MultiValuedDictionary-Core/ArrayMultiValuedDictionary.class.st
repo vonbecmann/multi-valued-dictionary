@@ -303,7 +303,7 @@ ArrayMultiValuedDictionary >> at: key ifAbsentPut: aBlock [
 	If key is not included in the receiver store the result
 	of evaluating aBlock as new value."
 
-	^ dictionary at: key ifAbsentPut: [ Array with: aBlock value ]
+	^ dictionary at: key ifAbsentPut: [ { aBlock value } ]
 ]
 
 { #category : #accessing }
@@ -340,7 +340,7 @@ ArrayMultiValuedDictionary >> at: key ifPresent: aPresentBlock ifAbsentPut: anAb
 	^ dictionary
 		at: key
 		ifPresent: aPresentBlock
-		ifAbsentPut: [ Array with: anAbsentBlock value ]
+		ifAbsentPut: [ { anAbsentBlock value } ]
 ]
 
 { #category : #accessing }
@@ -354,7 +354,7 @@ ArrayMultiValuedDictionary >> at: key put: anObject [
 		at: key
 		put:
 			(existingValues
-				ifNil: [ Array with: anObject ]
+				ifNil: [ { anObject } ]
 				ifNotNil: [ existingValues copyWith: anObject ]).
 	^ anObject
 ]
