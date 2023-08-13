@@ -1,10 +1,16 @@
 Class {
 	#name : #MVIdentityDictionaryAndOrderedCollectionTest,
-	#superclass : #MVDictionaryAndOrderedCollectionTest,
-	#category : 'MultiValuedDictionary-Tests'
+	#superclass : #MultiValuedDictionaryTest,
+	#category : #'MultiValuedDictionary-Tests'
 }
 
 { #category : #requirements }
 MVIdentityDictionaryAndOrderedCollectionTest >> dictionaryClass [
 	^ IdentityDictionary
+]
+
+{ #category : #requirements }
+MVIdentityDictionaryAndOrderedCollectionTest >> valueCollectionClass [
+
+	^ OrderedCollection
 ]
