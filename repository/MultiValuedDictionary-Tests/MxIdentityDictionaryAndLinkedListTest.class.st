@@ -6,11 +6,17 @@ collection: LinkedList
 "
 Class {
 	#name : #MxIdentityDictionaryAndLinkedListTest,
-	#superclass : #MxDictionaryAndLinkedListTest,
-	#category : 'MultiValuedDictionary-Tests'
+	#superclass : #MixedDictionaryTest,
+	#category : #'MultiValuedDictionary-Tests'
 }
 
 { #category : #requirements }
 MxIdentityDictionaryAndLinkedListTest >> dictionaryClass [
 	^ IdentityDictionary
+]
+
+{ #category : #requirements }
+MxIdentityDictionaryAndLinkedListTest >> valueCollectionClass [
+
+	^ LinkedList
 ]

@@ -7,11 +7,17 @@ collection: OrderedCollection
 "
 Class {
 	#name : #MxIdentityDictionaryAndOrderedCollectionTest,
-	#superclass : #MxDictionaryAndOrderedCollectionTest,
-	#category : 'MultiValuedDictionary-Tests'
+	#superclass : #MixedDictionaryTest,
+	#category : #'MultiValuedDictionary-Tests'
 }
 
 { #category : #requirements }
 MxIdentityDictionaryAndOrderedCollectionTest >> dictionaryClass [
 	^ IdentityDictionary
+]
+
+{ #category : #requirements }
+MxIdentityDictionaryAndOrderedCollectionTest >> valueCollectionClass [
+
+	^ OrderedCollection
 ]
