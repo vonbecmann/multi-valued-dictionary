@@ -226,7 +226,7 @@ AbstractMultiValuedDictionaryRootTest >> testDoSeparatedBy [
 	expectedString := ''.
 	beforeFirst := true.
 	self collectionWithoutNilElements do: [ :each | 
-		beforeFirst = true
+		beforeFirst 
 			ifTrue: [ beforeFirst := false ]
 			ifFalse: [ expectedString := expectedString , '|' ].
 		expectedString := expectedString , each asString ].
