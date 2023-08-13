@@ -11,10 +11,6 @@ or
 Class {
 	#name : #ArrayMixedDictionaryTest,
 	#superclass : #ArrayMultiValuedDictionaryRootTest,
-	#instVars : [
-		'nonEmptyDict',
-		'duplicatedElement'
-	],
 	#category : #'MultiValuedDictionary-Tests'
 }
 

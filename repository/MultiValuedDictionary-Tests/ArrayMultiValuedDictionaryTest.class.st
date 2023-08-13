@@ -9,10 +9,6 @@ each association is  like
 Class {
 	#name : #ArrayMultiValuedDictionaryTest,
 	#superclass : #ArrayMultiValuedDictionaryRootTest,
-	#instVars : [
-		'nonEmptyDict',
-		'duplicatedElement'
-	],
 	#category : #'MultiValuedDictionary-Tests'
 }
 
