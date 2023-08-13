@@ -6,15 +6,15 @@ collection: OrderedCollection
 Class {
 	#name : #SDictionaryAndOrderedCollectionTest,
 	#superclass : #SimpleDictionaryTest,
-	#category : 'MultiValuedDictionary-Tests'
+	#category : #'MultiValuedDictionary-Tests'
 }
 
-{ #category : #accessing }
+{ #category : #requirements }
 SDictionaryAndOrderedCollectionTest >> dictionaryClass [
 	^ Dictionary
 ]
 
-{ #category : #accessing }
+{ #category : #requirements }
 SDictionaryAndOrderedCollectionTest >> valueCollectionClass [
 	^ OrderedCollection
 ]

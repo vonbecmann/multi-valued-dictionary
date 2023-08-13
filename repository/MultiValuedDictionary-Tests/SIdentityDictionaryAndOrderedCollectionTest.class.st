@@ -9,7 +9,7 @@ Class {
 	#category : #'MultiValuedDictionary-Tests'
 }
 
-{ #category : #accessing }
+{ #category : #requirements }
 SIdentityDictionaryAndOrderedCollectionTest >> dictionaryClass [
 	^ IdentityDictionary
 ]

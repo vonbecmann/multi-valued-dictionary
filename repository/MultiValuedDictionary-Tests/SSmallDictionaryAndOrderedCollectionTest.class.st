@@ -9,7 +9,7 @@ Class {
 	#category : #'MultiValuedDictionary-Tests'
 }
 
-{ #category : #accessing }
+{ #category : #requirements }
 SSmallDictionaryAndOrderedCollectionTest >> dictionaryClass [
 	^ SmallDictionary
 ]

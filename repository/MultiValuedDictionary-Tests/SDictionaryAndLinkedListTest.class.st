@@ -6,15 +6,15 @@ collection: LinkedList
 Class {
 	#name : #SDictionaryAndLinkedListTest,
 	#superclass : #SimpleDictionaryTest,
-	#category : 'MultiValuedDictionary-Tests'
+	#category : #'MultiValuedDictionary-Tests'
 }
 
-{ #category : #accessing }
+{ #category : #requirements }
 SDictionaryAndLinkedListTest >> dictionaryClass [
 	^ Dictionary
 ]
 
-{ #category : #accessing }
+{ #category : #requirements }
 SDictionaryAndLinkedListTest >> valueCollectionClass [
 	^ LinkedList
 ]
