@@ -33,8 +33,8 @@ MultiValuedDictionaryTest >> anIndex [
 
 { #category : #requirements }
 MultiValuedDictionaryTest >> anotherElementNotIn [
+
 	^ 42
-	
 ]
 
 { #category : #requirements }
@@ -106,7 +106,7 @@ MultiValuedDictionaryTest >> collectionWithoutEqualElements [
 		add: #b -> 2;
 		add: #b -> 3;
 		add: #c -> 4;
-		add: #c -> 5;		
+		add: #c -> 5;
 		yourself
 ]
 

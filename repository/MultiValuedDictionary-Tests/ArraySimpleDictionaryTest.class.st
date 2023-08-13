@@ -220,7 +220,7 @@ ArraySimpleDictionaryTest >> nonEmptyDifferentFromNonEmptyDict [
 
 { #category : #requirements }
 ArraySimpleDictionaryTest >> nonEmptyWithCopyNonIdentical [
-	" return a collection including elements for which copy is not identical 
+	" return a collection including elements for which copy is not identical
 	  to the initial element ( this is not the case of Integer )"
 
 	^ self newEmptyDict

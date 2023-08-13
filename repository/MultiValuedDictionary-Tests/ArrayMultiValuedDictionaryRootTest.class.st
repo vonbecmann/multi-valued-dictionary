@@ -46,13 +46,11 @@ ArrayMultiValuedDictionaryRootTest >> empty [
 { #category : #requirements }
 ArrayMultiValuedDictionaryRootTest >> emptyDict [
 	^ ArrayMultiValuedDictionary dictionary: self dictionaryClass
-	
 ]
 
 { #category : #requirements }
 ArrayMultiValuedDictionaryRootTest >> newEmptyDict [
 	^ ArrayMultiValuedDictionary dictionary: self dictionaryClass
-	
 ]
 
 { #category : #requirements }
@@ -81,7 +79,7 @@ ArrayMultiValuedDictionaryRootTest >> testAddAll [
 	self assert: result equals: collectionToAdd.
 	self assert: collection size equals: oldSize + 2.
 
-	result associationsDo: [ :assoc | 
+	result associationsDo: [ :assoc |
 		self assert: ((collection at: assoc key) includes: assoc value) ]
 ]
 
@@ -130,7 +128,7 @@ ArrayMultiValuedDictionaryRootTest >> testAsStringOnDelimiterLastMore [
 	self nonEmpty asStringOn: multiItemStream delimiter: delim last: last.
 	result := multiItemStream contents.
 	allElementsAsString := result findBetweenSubstrings: delim.
-	tmp do: [ :each | 
+	tmp do: [ :each |
 		self
 			assert: (tmp occurrencesOf: each)
 			equals: (allElementsAsString occurrencesOf: each) ].
@@ -150,7 +148,7 @@ ArrayMultiValuedDictionaryRootTest >> testAsStringOnDelimiterMore [
 	self nonEmpty asStringOn: multiItemStream delimiter: delim.
 	result := multiItemStream contents.
 	allElementsAsString := result findBetweenSubstrings: delim.
-	tmp do: [ :each | 
+	tmp do: [ :each |
 		self
 			assert: (tmp occurrencesOf: each)
 			equals: (allElementsAsString occurrencesOf: each) ]
@@ -183,7 +181,7 @@ ArrayMultiValuedDictionaryRootTest >> testAssociations [
 	collection := self nonEmpty.
 	result := collection associations.
 	self assert: result size equals: collection size.
-	result do: [ :assoc | 
+	result do: [ :assoc |
 		self assert: ((collection at: assoc key) includes: assoc value) ]
 	"keys do: [ :key | self assert: ( result at: key ) = ( collection at: key )] ."
 ]
@@ -195,13 +193,13 @@ ArrayMultiValuedDictionaryRootTest >> testAssociationsDo [
 	collection := self nonEmptyDict .
 
 	keys := OrderedCollection new.
-	
-	collection associationsDo: [ :assoc | 
+
+	collection associationsDo: [ :assoc |
 		keys add: assoc key.
-		self assert: ((collection at: assoc key) includes: assoc value).		
+		self assert: ((collection at: assoc key) includes: assoc value).
 		].
-	
-	collection keys do: [:key | self assert: ( keys occurrencesOf: key ) >= (collection keys occurrencesOf: key)].
+
+	collection keys do: [:key | self assert: ( keys occurrencesOf: key ) >= (collection keys occurrencesOf: key)]
 ]
 
 { #category : #'tests - dictionnary enumerating' }
@@ -210,11 +208,11 @@ ArrayMultiValuedDictionaryRootTest >> testAssociationsSelect [
 	| collection keys result |
 	collection := self nonEmptyDict.
 	keys := OrderedCollection new.
-	result := collection associationsSelect: [ :assoc | 
+	result := collection associationsSelect: [ :assoc |
 		          keys add: assoc key.
 		          true ].
 
-	collection keys do: [ :key | 
+	collection keys do: [ :key |
 		self assert:
 			(collection keys occurrencesOf: key) <= (keys occurrencesOf: key) ].
 	self assert: result equals: collection
@@ -240,7 +238,7 @@ ArrayMultiValuedDictionaryRootTest >> testAtIfAbsent [
 	collection := self nonEmpty.
 	association := collection associations anyOne.
 	self assert:
-		((collection at: association key ifAbsent: [ Error signal ]) 
+		((collection at: association key ifAbsent: [ Error signal ])
 			 includes: association value).
 	self
 		assert: (collection at: self keyNotIn ifAbsent: [ self valueNotIn ])
@@ -252,12 +250,12 @@ ArrayMultiValuedDictionaryRootTest >> testAtIfAbsentPut [
 	| collection association |
 	collection := self nonEmpty .
 	association := collection associations anyOne.
-	
+
 	collection at: association key ifAbsentPut: [ 888 ].
 	self assert: ((collection at: association key) includes: association value).
-	
+
 	collection at: self keyNotIn  ifAbsentPut: [ 888 ].
-	self assert: ((collection at: self keyNotIn) includes: 888).
+	self assert: ((collection at: self keyNotIn) includes: 888)
 ]
 
 { #category : #'tests - DictionaryIndexAccessing' }
@@ -290,8 +288,8 @@ ArrayMultiValuedDictionaryRootTest >> testAtIfAbsentPutAll02 [
 
 	collection at: association key ifAbsentPutAll: [ association value ].
 
-	self 
-		assertCollection: (collection at: association key) 
+	self
+		assertCollection: (collection at: association key)
 		hasSameElements: association value
 ]
 
@@ -305,7 +303,7 @@ ArrayMultiValuedDictionaryRootTest >> testAtIfPresent [
 	association := collection associations anyOne.
 	arg := nil.
 	self
-		assert: (collection at: association key ifPresent: [ :value | 
+		assert: (collection at: association key ifPresent: [ :value |
 				 arg := value.
 				 #present ])
 		equals: #present.
@@ -360,7 +358,7 @@ ArrayMultiValuedDictionaryRootTest >> testAtIfPresentIfAbsentPut [
 	self
 		assert: (collection
 				 at: association key
-				 ifPresent: [ :value | 
+				 ifPresent: [ :value |
 					 arg := value.
 					 #present ]
 				 ifAbsentPut: [ Error signal ])
@@ -385,10 +383,9 @@ ArrayMultiValuedDictionaryRootTest >> testAtIfPresentIfAbsentPut [
 { #category : #'tests - at put' }
 ArrayMultiValuedDictionaryRootTest >> testAtPut [
 	"self debug: #testAtPut"
-	
+
 	self nonEmpty at: self anIndex put: self aValue.
-	self assert: ((self nonEmpty at: self anIndex) includes: self aValue).
-	
+	self assert: ((self nonEmpty at: self anIndex) includes: self aValue)
 ]
 
 { #category : #'tests - at put' }
@@ -412,19 +409,19 @@ ArrayMultiValuedDictionaryRootTest >> testAtPutAllTwoCollections [
 ArrayMultiValuedDictionaryRootTest >> testAtPutDict [
 	"self run: #testAtPutDict"
 	"self debug: #testAtPutDict"
-	
+
 	| adictionary keyIn |
 	adictionary := self nonEmpty .
 	keyIn := adictionary keys anyOne.
-	
+
 	adictionary at: keyIn put: 'new'.
 	self assert: ((adictionary at: keyIn ) includes: 'new').
-	
+
 	adictionary at: keyIn  put: 'newnew'.
 	self assert: ((adictionary at: keyIn ) includes: 'newnew').
-	
+
 	adictionary at: self keyNotIn  put: 666.
-	self assert: ((adictionary at: self keyNotIn) includes: 666).
+	self assert: ((adictionary at: self keyNotIn) includes: 666)
 ]
 
 { #category : #'tests - DictionaryIndexAccessing' }
@@ -441,7 +438,7 @@ ArrayMultiValuedDictionaryRootTest >> testAtPutNil [
 	new := 'new'.
 	self assert: (aDictionary at: nil put: 'new') identicalTo: new.
 	self supportsNilKey
-		ifTrue: [ 
+		ifTrue: [
 		self assert: ((aDictionary at: nil) identityIncludes: new) ]
 		ifFalse: [ self deny: (aDictionary includesKey: nil) ].
 
@@ -453,7 +450,7 @@ ArrayMultiValuedDictionaryRootTest >> testAtPutNil [
 
 	self assert: (aDictionary at: nil put: nil) isNil.
 	self supportsNilKey
-		ifTrue: [ 
+		ifTrue: [
 		self assert: ((aDictionary at: nil) identityIncludes: nil) ]
 		ifFalse: [ self deny: (aDictionary includesKey: nil) ]
 ]
@@ -461,10 +458,10 @@ ArrayMultiValuedDictionaryRootTest >> testAtPutNil [
 { #category : #'tests - at put' }
 ArrayMultiValuedDictionaryRootTest >> testAtPutTwoValues [
 	"self debug: #testAtPutTwoValues"
-	
+
 	self nonEmpty at: self anIndex put: self aValue.
 	self nonEmpty at: self anIndex put: self anotherValue.
-	self assert: ((self nonEmpty at: self anIndex) includes: self anotherValue).
+	self assert: ((self nonEmpty at: self anIndex) includes: self anotherValue)
 ]
 
 { #category : #tests }
@@ -511,7 +508,7 @@ ArrayMultiValuedDictionaryRootTest >> testDictionaryConcatenationWithCommonKeys 
 	result := dictionary1 , dictionary2.
 	self assert: result size equals: dictionary1 size + dictionary2 size.
 
-	dictionary2 associationsDo: [ :assoc | 
+	dictionary2 associationsDo: [ :assoc |
 		self assert: ((result at: assoc key) includes: assoc value) ]
 ]
 
@@ -528,7 +525,7 @@ ArrayMultiValuedDictionaryRootTest >> testDictionaryConcatenationWithCommonKeysD
 	result := dictionary1 , dictionary2.
 	self assert: result size equals: dictionary1 size + dictionary2 size.
 
-	dictionary2 associationsDo: [ :assoc | 
+	dictionary2 associationsDo: [ :assoc |
 		self assert: ((result at: assoc key) includes: assoc value) ]
 ]
 
@@ -540,9 +537,9 @@ ArrayMultiValuedDictionaryRootTest >> testDictionaryConcatenationWithoutCommonKe
 	dictionary2 := self nonEmptyDifferentFromNonEmptyDict.
 	result := dictionary1 , dictionary2.
 	self assert: result size equals: dictionary1 size + dictionary2 size.
-	dictionary1 associationsDo: [ :assoc | 
+	dictionary1 associationsDo: [ :assoc |
 		self assert: ((result at: assoc key) includes: assoc value) ].
-	dictionary2 associationsDo: [ :assoc | 
+	dictionary2 associationsDo: [ :assoc |
 		self assert: ((result at: assoc key) includes: assoc value) ]
 ]
 
@@ -550,10 +547,10 @@ ArrayMultiValuedDictionaryRootTest >> testDictionaryConcatenationWithoutCommonKe
 ArrayMultiValuedDictionaryRootTest >> testDifferenceWithNonNullIntersection [
 	"Answer the set theoretic difference of two collections."
 	"self debug: #testDifferenceWithNonNullIntersection"
-	"	#(1 2 3) difference: #(2 4) 
+	"	#(1 2 3) difference: #(2 4)
 	->  #(1 3)"
 	| res overlapping |
-	overlapping := self newEmptyDict  
+	overlapping := self newEmptyDict
 		add: self anotherElementOrAssociationNotIn;
 		add: self anotherElementOrAssociationIn;
 		yourself.
@@ -567,16 +564,16 @@ ArrayMultiValuedDictionaryRootTest >> testDifferenceWithSeparateCollection [
 	"Answer the set theoretic difference of two collections."
 	"self debug: #testDifferenceWithSeparateCollection"
 	| res separateCol |
-	
+
 	separateCol := self newEmptyDict add: self anotherElementOrAssociationNotIn; yourself.
 	res := self collectionWithoutEqualElements difference: separateCol.
-	
+
 	self deny: (res includes: self anotherElementOrAssociationNotIn).
 	self assert: res size equals: self collectionWithoutEqualElements size.
-	
+
 	self collectionWithoutEqualElements do: [ :each|
 		self assert: (res includes: each)].
-	
+
 	res := separateCol difference: self collection.
 	self deny: (res includes: self collection anyOne).
 	self assert: res equals: separateCol
@@ -587,7 +584,7 @@ ArrayMultiValuedDictionaryRootTest >> testEquality [
 
 	| nonEmptyDict2 |
 	nonEmptyDict2 := self newEmptyDict.
-	self nonEmpty keysAndValuesDo: [ :key :value | 
+	self nonEmpty keysAndValuesDo: [ :key :value |
 		nonEmptyDict2 at: key put: value ].
 	self assert: self nonEmptyDict equals: nonEmptyDict2
 ]
@@ -599,7 +596,6 @@ ArrayMultiValuedDictionaryRootTest >> testIntersectionBasic [
 	inter := self collection intersection: (self newEmptyDict add: self anotherElementOrAssociationIn; yourself).
 	self deny: inter isEmpty.
 	self assert: (inter includes: self anotherElementOrAssociationIn value)
-	
 ]
 
 { #category : #'tests - set arithmetic' }
@@ -631,18 +627,16 @@ ArrayMultiValuedDictionaryRootTest >> testIsDictionary [
 
 { #category : #'tests - dictionary key access' }
 ArrayMultiValuedDictionaryRootTest >> testKeyAtIdentityValue [
-	
-	
+
+
 	| dict value result |
 	dict := self nonEmpty .
 	value := dict values anyOne.
-	
+
 	result := dict keyAtIdentityValue: value.
 	self assert: ((dict at: result) includes: value).
-		
+
 	self should: [dict keyAtIdentityValue: self valueNotIn ] raise: Error
-	
-	
 ]
 
 { #category : #'tests - dictionary key access' }
@@ -667,17 +661,15 @@ ArrayMultiValuedDictionaryRootTest >> testKeyAtIdentityValueIfAbsent [
 ArrayMultiValuedDictionaryRootTest >> testKeyAtValue [
 	"self run: #testKeyAtValue"
 	"self debug: #testKeyAtValue"
-	
+
 	| dict value result |
 	dict := self nonEmpty .
 	value := dict values anyOne.
-	
+
 	result := dict keyAtValue: value.
 	self assert: ((dict at: result) includes: value).
-		
+
 	self should: [dict keyAtValue: self valueNotIn ] raise: Error
-	
-	
 ]
 
 { #category : #'tests - dictionary key access' }
@@ -711,14 +703,14 @@ ArrayMultiValuedDictionaryRootTest >> testKeys [
 { #category : #'tests - dictionnary enumerating' }
 ArrayMultiValuedDictionaryRootTest >> testKeysAndValuesDo [
 
-	
+
 	| collection keys |
 	collection := self nonEmptyDict .
 	keys := OrderedCollection new.
-	collection keysAndValuesDo: [ :key :value | 
+	collection keysAndValuesDo: [ :key :value |
 		keys add: key.
 		self assert: ((collection at: key) includes: value) ].
-	
+
 	collection keys do: [ :key | self assert: (collection keys occurrencesOf: key) <= (keys occurrencesOf: key)]
 ]
 
@@ -747,19 +739,19 @@ ArrayMultiValuedDictionaryRootTest >> testNew [
 
 { #category : #'tests - printing' }
 ArrayMultiValuedDictionaryRootTest >> testPrintOnDelimiter [
-	
+
 	| result allElementsAsString tmp |
-	
+
 	result := String streamContents: [ :aStream |
 		tmp := OrderedCollection new.
 		self nonEmpty do: [:each | tmp add:(String streamContents: [:s | s print: each ])].
 		self nonEmpty printOn: aStream delimiter: ', ' ].
-	
+
 	allElementsAsString := (result findBetweenSubstrings: ', ').
-	
+
 	1 to: allElementsAsString size do:
-		[:i | 
-		self assert: (tmp occurrencesOf:(allElementsAsString at:i)) equals: (allElementsAsString  occurrencesOf:(allElementsAsString at:i)) ].
+		[:i |
+		self assert: (tmp occurrencesOf:(allElementsAsString at:i)) equals: (allElementsAsString  occurrencesOf:(allElementsAsString at:i)) ]
 ]
 
 { #category : #tests }

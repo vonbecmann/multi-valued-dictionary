@@ -36,7 +36,6 @@ MixedDictionaryTest >> anIndex [
 { #category : #requirements }
 MixedDictionaryTest >> anotherElementNotIn [
 	^ 42
-	
 ]
 
 { #category : #requirements }
@@ -151,9 +150,9 @@ MixedDictionaryTest >> integerCollectionWithoutEqualElements [
 		add: #a -> 0;
 		add: #a -> 1;
 		add: #b -> 2;
-		add: #b -> 3;				
+		add: #b -> 3;
 		add: #c -> 4;
-		add: #c -> 5;		
+		add: #c -> 5;
 		yourself
 ]
 

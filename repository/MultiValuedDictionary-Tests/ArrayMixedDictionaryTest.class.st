@@ -36,7 +36,6 @@ ArrayMixedDictionaryTest >> anIndex [
 { #category : #requirements }
 ArrayMixedDictionaryTest >> anotherElementNotIn [
 	^ 42
-	
 ]
 
 { #category : #requirements }
