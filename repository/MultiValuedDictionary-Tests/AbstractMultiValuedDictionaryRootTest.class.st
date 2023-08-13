@@ -15,6 +15,11 @@ AbstractMultiValuedDictionaryRootTest class >> isAbstract [
 ]
 
 { #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> collection [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 AbstractMultiValuedDictionaryRootTest >> collectionClass [
 	^ self subclassResponsibility
 ]
@@ -23,6 +28,11 @@ AbstractMultiValuedDictionaryRootTest >> collectionClass [
 AbstractMultiValuedDictionaryRootTest >> collectionWithoutNilElements [
 " return a collection that doesn't includes a nil element  and that doesn't includes equal elements'"
 	self explicitRequirement
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> dictionaryClass [
+	^ self subclassResponsibility
 ]
 
 { #category : #requirements }
@@ -37,6 +47,11 @@ AbstractMultiValuedDictionaryRootTest >> empty [
 ]
 
 { #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> emptyDict [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 AbstractMultiValuedDictionaryRootTest >> newEmptyDict [
 	^ self subclassResponsibility
 ]
@@ -45,6 +60,11 @@ AbstractMultiValuedDictionaryRootTest >> newEmptyDict [
 AbstractMultiValuedDictionaryRootTest >> nonEmpty [
 
 	^ self explicitRequirement
+]
+
+{ #category : #'tests - set arithmetic' }
+AbstractMultiValuedDictionaryRootTest >> numberOfSimilarElementsInIntersection [
+	^ self subclassResponsibility
 ]
 
 { #category : #requirements }
@@ -90,6 +110,21 @@ AbstractMultiValuedDictionaryRootTest >> test0TSizeTest [
 	self denyEmpty: self sizeCollection
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAddAll [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAddWithKeyAlreadyIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAddWithKeyNotIn [
+	^ self subclassResponsibility
+]
+
 { #category : #'tests - iterating' }
 AbstractMultiValuedDictionaryRootTest >> testAllSatisfy [
 
@@ -111,6 +146,11 @@ AbstractMultiValuedDictionaryRootTest >> testAllSatisfyEmpty [
 	self assert: ( self empty allSatisfy: [:each | false])
 ]
 
+{ #category : #'tests - set arithmetic' }
+AbstractMultiValuedDictionaryRootTest >> testAnyOneWithEmptyDict [
+	^ self subclassResponsibility
+]
+
 { #category : #'tests - iterating' }
 AbstractMultiValuedDictionaryRootTest >> testAnySastify [
 
@@ -127,12 +167,52 @@ AbstractMultiValuedDictionaryRootTest >> testAnySastify [
 ]
 
 { #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAsStringOnDelimiterLastMore [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAsStringOnDelimiterMore [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 AbstractMultiValuedDictionaryRootTest >> testAssociationAtIfPresent [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAssociations [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAssociationsDo [
 	^ self subclassResponsibility
 ]
 
 { #category : #tests }
 AbstractMultiValuedDictionaryRootTest >> testAssociationsSelect [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAt [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAtIfAbsent [
+	^ self subclassResponsibility
+]
+
+{ #category : #'tests - set arithmetic' }
+AbstractMultiValuedDictionaryRootTest >> testAtIfAbsentPut [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAtIfAbsentPut02 [
 	^ self subclassResponsibility
 ]
 
@@ -146,13 +226,48 @@ AbstractMultiValuedDictionaryRootTest >> testAtIfAbsentPutAll02 [
 	^ self subclassResponsibility
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAtIfPresent [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAtIfPresentIfAbsent [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAtIfPresentIfAbsentPut [
+	^ self subclassResponsibility
+]
+
 { #category : #tests }
 AbstractMultiValuedDictionaryRootTest >> testAtPut [
 	^ self subclassResponsibility
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAtPutAll [
+	^ self subclassResponsibility
+]
+
 { #category : #tests }
 AbstractMultiValuedDictionaryRootTest >> testAtPutAllTwoCollections [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAtPutDict [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testAtPutNil [
+	^ self subclassResponsibility
+]
+
+{ #category : #'tests - set arithmetic' }
+AbstractMultiValuedDictionaryRootTest >> testAtPutTwoValues [
 	^ self subclassResponsibility
 ]
 
@@ -204,9 +319,19 @@ AbstractMultiValuedDictionaryRootTest >> testCollectThenDoOnEmpty [
 	self assertEmpty: (self empty collect: [ :e | self fail ] thenDo: [ self fail ])
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testCollectThenRejectOnEmptyDict [
+	^ self subclassResponsibility
+]
+
 { #category : #'tests - iterating' }
 AbstractMultiValuedDictionaryRootTest >> testCollectThenSelectOnEmpty [
 	self assertEmpty: (self empty collect: [ :e | self fail ] thenSelect: [ :e | self fail ])
+]
+
+{ #category : #'tests - set arithmetic' }
+AbstractMultiValuedDictionaryRootTest >> testDeclareFrom [
+	^ self subclassResponsibility
 ]
 
 { #category : #'tests - iterating' }
@@ -218,6 +343,11 @@ AbstractMultiValuedDictionaryRootTest >> testDetect [
 	res := self collectionWithoutNilElements detect: [ :each |
 		       each = element ].
 	self assert: res equals: element
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testDetectErrorNotFound [
+	^ self subclassResponsibility
 ]
 
 { #category : #'tests - iterating' }
@@ -236,13 +366,28 @@ AbstractMultiValuedDictionaryRootTest >> testDetectIfNone [
 	self assert: res equals: element
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testDictionaryConcatenationWithCommonKeys [
+	^ self subclassResponsibility
+]
+
 { #category : #tests }
 AbstractMultiValuedDictionaryRootTest >> testDictionaryConcatenationWithCommonKeysDifferentValues [
 	^ self subclassResponsibility
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testDictionaryConcatenationWithoutCommonKeys [
+	^ self subclassResponsibility
+]
+
 { #category : #tests }
 AbstractMultiValuedDictionaryRootTest >> testDifferenceWithNonNullIntersection [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testDifferenceWithSeparateCollection [
 	^ self subclassResponsibility
 ]
 
@@ -305,6 +450,11 @@ AbstractMultiValuedDictionaryRootTest >> testDoWithout [
 			equals: (res occurrencesOf: each) ]
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testEquality [
+	^ self subclassResponsibility
+]
+
 { #category : #'tests - empty' }
 AbstractMultiValuedDictionaryRootTest >> testIfEmpty [
 	self nonEmpty ifEmpty: [ self assert: false ].
@@ -353,6 +503,11 @@ AbstractMultiValuedDictionaryRootTest >> testIntersectionTwoSimilarElementsInInt
 	^ self subclassResponsibility
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testIsCollection [
+	^ self subclassResponsibility
+]
+
 { #category : #tests }
 AbstractMultiValuedDictionaryRootTest >> testIsDictionary [
 	^ self subclassResponsibility
@@ -375,6 +530,41 @@ AbstractMultiValuedDictionaryRootTest >> testKeyAtIdentityValue [
 	^ self subclassResponsibility
 ]
 
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testKeyAtIdentityValueIfAbsent [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testKeyAtValue [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testKeyAtValueIfAbsent [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testKeys [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testKeysAndValuesDo [
+	^ self subclassResponsibility
+]
+
+{ #category : #'tests - set arithmetic' }
+AbstractMultiValuedDictionaryRootTest >> testKeysAndValuesRemove [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testKeysSortedSafely [
+	^ self subclassResponsibility
+]
+
 { #category : #'tests - iterating' }
 AbstractMultiValuedDictionaryRootTest >> testNoneSatisfy [
 
@@ -394,6 +584,11 @@ AbstractMultiValuedDictionaryRootTest >> testNoneSatisfyEmpty [
 AbstractMultiValuedDictionaryRootTest >> testNotEmpty [
 	self assert: self nonEmpty notEmpty.
 	self deny: self empty notEmpty
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testPrintOnDelimiter [
+	^ self subclassResponsibility
 ]
 
 { #category : #'tests - iterating' }
@@ -506,6 +701,11 @@ AbstractMultiValuedDictionaryRootTest >> testRejectThenDo [
 { #category : #'tests - iterating' }
 AbstractMultiValuedDictionaryRootTest >> testRejectThenDoOnEmpty [
 	self assertEmpty: (self empty reject: [ :e | self fail ] thenDo: [ self fail ])
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> testRemoveAll [
+	^ self subclassResponsibility
 ]
 
 { #category : #requirements }
