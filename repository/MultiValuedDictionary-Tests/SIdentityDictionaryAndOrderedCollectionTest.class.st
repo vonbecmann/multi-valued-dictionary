@@ -5,11 +5,17 @@ collection: OrderedCollection
 "
 Class {
 	#name : #SIdentityDictionaryAndOrderedCollectionTest,
-	#superclass : #SDictionaryAndOrderedCollectionTest,
-	#category : 'MultiValuedDictionary-Tests'
+	#superclass : #SimpleDictionaryTest,
+	#category : #'MultiValuedDictionary-Tests'
 }
 
 { #category : #accessing }
 SIdentityDictionaryAndOrderedCollectionTest >> dictionaryClass [
 	^ IdentityDictionary
+]
+
+{ #category : #requirements }
+SIdentityDictionaryAndOrderedCollectionTest >> valueCollectionClass [
+
+	^ OrderedCollection
 ]

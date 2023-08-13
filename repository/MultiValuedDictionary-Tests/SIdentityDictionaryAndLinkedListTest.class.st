@@ -5,11 +5,17 @@ collection: LinkedList
 "
 Class {
 	#name : #SIdentityDictionaryAndLinkedListTest,
-	#superclass : #SDictionaryAndLinkedListTest,
-	#category : 'MultiValuedDictionary-Tests'
+	#superclass : #SimpleDictionaryTest,
+	#category : #'MultiValuedDictionary-Tests'
 }
 
 { #category : #accessing }
 SIdentityDictionaryAndLinkedListTest >> dictionaryClass [
 	^ IdentityDictionary
+]
+
+{ #category : #requirements }
+SIdentityDictionaryAndLinkedListTest >> valueCollectionClass [
+
+	^ LinkedList
 ]
