@@ -16,10 +16,45 @@ MultiValuedDictionaryRootTest class >> isAbstract [
 ]
 
 { #category : #requirements }
+MultiValuedDictionaryRootTest >> aValue [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> anIndex [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> anotherElementNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 MultiValuedDictionaryRootTest >> anotherElementOrAssociationIn [
 	" return an element (or an association for Dictionary ) present  in 'collection' "
 
 	^ self collection associations anyOne
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> anotherElementOrAssociationNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> anotherValue [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> associationWithKeyAlreadyInToAdd [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> associationWithKeyNotInToAdd [
+	^ self subclassResponsibility
 ]
 
 { #category : #coverage }
@@ -42,7 +77,52 @@ MultiValuedDictionaryRootTest >> collectionClass [
 ]
 
 { #category : #requirements }
+MultiValuedDictionaryRootTest >> collectionNotIncluded [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> collectionWithElementsToRemove [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> collectionWithEqualElements [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> collectionWithSortableElements [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> collectionWithoutEqualElements [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 MultiValuedDictionaryRootTest >> dictionaryClass [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> elementNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> elementNotInForOccurrences [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> elementToAdd [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> elementTwiceInForOccurrences [
 	^ self subclassResponsibility
 ]
 
@@ -57,6 +137,26 @@ MultiValuedDictionaryRootTest >> emptyDict [
 ]
 
 { #category : #requirements }
+MultiValuedDictionaryRootTest >> integerCollectionWithoutEqualElements [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> keyNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> keyNotInNonEmpty [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> keyNotInNonEmptyDict [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 MultiValuedDictionaryRootTest >> newEmptyDict [
 	^ MultiValuedDictionary dictionary: self dictionaryClass collection: self valueCollectionClass
 ]
@@ -64,6 +164,31 @@ MultiValuedDictionaryRootTest >> newEmptyDict [
 { #category : #requirements }
 MultiValuedDictionaryRootTest >> nonEmpty [
 	^ self nonEmptyDict
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> nonEmpty1Element [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> nonEmptyDict [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> nonEmptyDifferentFromNonEmptyDict [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> nonEmptyWithCopyNonIdentical [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> nonEmptyWithoutEqualsValues [
+	^ self subclassResponsibility
 ]
 
 { #category : #requirements }
@@ -842,5 +967,15 @@ MultiValuedDictionaryRootTest >> testRemoveKeyIfAbsent [
 MultiValuedDictionaryRootTest >> valueCollectionClass [
 	"a collection class that holds the values at a key in the dictionary"
 
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> valueNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+MultiValuedDictionaryRootTest >> valueNotInNonEmpty [
 	^ self subclassResponsibility
 ]

@@ -15,12 +15,77 @@ AbstractMultiValuedDictionaryRootTest class >> isAbstract [
 ]
 
 { #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> aValue [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> anIndex [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> anotherElementNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> anotherElementOrAssociationIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> anotherElementOrAssociationNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> anotherValue [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> associationWithKeyAlreadyInToAdd [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> associationWithKeyNotInToAdd [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 AbstractMultiValuedDictionaryRootTest >> collection [
 	^ self subclassResponsibility
 ]
 
 { #category : #requirements }
 AbstractMultiValuedDictionaryRootTest >> collectionClass [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> collectionNotIncluded [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> collectionWithElementsToRemove [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> collectionWithEqualElements [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> collectionWithSortableElements [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> collectionWithoutEqualElements [
 	^ self subclassResponsibility
 ]
 
@@ -36,8 +101,28 @@ AbstractMultiValuedDictionaryRootTest >> dictionaryClass [
 ]
 
 { #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> elementNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> elementNotInForOccurrences [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> elementToAdd [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 AbstractMultiValuedDictionaryRootTest >> elementTwiceIn [
 	^ 1
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> elementTwiceInForOccurrences [
+	^ self subclassResponsibility
 ]
 
 { #category : #requirements }
@@ -52,6 +137,26 @@ AbstractMultiValuedDictionaryRootTest >> emptyDict [
 ]
 
 { #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> integerCollectionWithoutEqualElements [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> keyNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> keyNotInNonEmpty [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> keyNotInNonEmptyDict [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
 AbstractMultiValuedDictionaryRootTest >> newEmptyDict [
 	^ self subclassResponsibility
 ]
@@ -60,6 +165,31 @@ AbstractMultiValuedDictionaryRootTest >> newEmptyDict [
 AbstractMultiValuedDictionaryRootTest >> nonEmpty [
 
 	^ self explicitRequirement
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> nonEmpty1Element [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> nonEmptyDict [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> nonEmptyDifferentFromNonEmptyDict [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> nonEmptyWithCopyNonIdentical [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> nonEmptyWithoutEqualsValues [
+	^ self subclassResponsibility
 ]
 
 { #category : #'tests - set arithmetic' }
@@ -831,4 +961,14 @@ AbstractMultiValuedDictionaryRootTest >> testSumNumbers [
 	result := self collectionWithoutNilElements sumNumbers: [ :ele |
 		          ele ifNotNil: [ 1 ] ifNil: [ 0 ] ].
 	self assert: self collectionWithoutNilElements size equals: result
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> valueNotIn [
+	^ self subclassResponsibility
+]
+
+{ #category : #requirements }
+AbstractMultiValuedDictionaryRootTest >> valueNotInNonEmpty [
+	^ self subclassResponsibility
 ]
