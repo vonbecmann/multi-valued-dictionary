@@ -10,10 +10,6 @@ where value is not a collection of values, is just an object.
 Class {
 	#name : #SimpleDictionaryTest,
 	#superclass : #MultiValuedDictionaryRootTest,
-	#instVars : [
-		'nonEmptyDict',
-		'duplicatedElement'
-	],
 	#category : #'MultiValuedDictionary-Tests'
 }
 
