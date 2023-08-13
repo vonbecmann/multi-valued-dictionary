@@ -38,13 +38,6 @@ MultiValuedDictionaryTest >> anotherElementNotIn [
 ]
 
 { #category : #requirements }
-MultiValuedDictionaryTest >> anotherElementOrAssociationIn [
-	" return an element (or an association for Dictionary ) present  in 'collection' "
-
-	^ self collection associations anyOne
-]
-
-{ #category : #requirements }
 MultiValuedDictionaryTest >> anotherElementOrAssociationNotIn [
 	" return an element (or an association for Dictionary )not present  in 'collection' "
 

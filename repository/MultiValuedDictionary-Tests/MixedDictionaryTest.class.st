@@ -40,13 +40,6 @@ MixedDictionaryTest >> anotherElementNotIn [
 ]
 
 { #category : #requirements }
-MixedDictionaryTest >> anotherElementOrAssociationIn [
-	" return an element (or an association for Dictionary ) present  in 'collection' "
-
-	^ self collection associations anyOne
-]
-
-{ #category : #requirements }
 MixedDictionaryTest >> anotherElementOrAssociationNotIn [
 	" return an element (or an association for Dictionary )not present  in 'collection' "
 
