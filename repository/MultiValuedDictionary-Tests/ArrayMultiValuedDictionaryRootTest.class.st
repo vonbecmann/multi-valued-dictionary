@@ -64,15 +64,6 @@ ArrayMultiValuedDictionaryRootTest >> collection [
 ]
 
 { #category : #requirements }
-ArrayMultiValuedDictionaryRootTest >> collectionClass [
-	" return the class to be used to create instances of the class tested"
-
-	" it cannot be used"
-
-	^ nil
-]
-
-{ #category : #requirements }
 ArrayMultiValuedDictionaryRootTest >> collectionNotIncluded [
 	^ self subclassResponsibility
 ]

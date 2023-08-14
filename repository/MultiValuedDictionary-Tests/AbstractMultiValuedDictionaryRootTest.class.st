@@ -60,11 +60,6 @@ AbstractMultiValuedDictionaryRootTest >> collection [
 ]
 
 { #category : #requirements }
-AbstractMultiValuedDictionaryRootTest >> collectionClass [
-	^ self subclassResponsibility
-]
-
-{ #category : #requirements }
 AbstractMultiValuedDictionaryRootTest >> collectionNotIncluded [
 	^ self subclassResponsibility
 ]
