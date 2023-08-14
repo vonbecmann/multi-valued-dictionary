@@ -6,7 +6,6 @@ im a copy of DictionaryTest.
 Class {
 	#name : #MultiValuedDictionaryRootTest,
 	#superclass : #AbstractMultiValuedDictionaryRootTest,
-	#classTraits : 'TIncludesTest classTrait',
 	#category : #'MultiValuedDictionary-Tests'
 }
 

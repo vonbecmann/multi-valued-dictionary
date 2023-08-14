@@ -5,7 +5,6 @@ root test case for a multi-valued dictionary based on array.
 Class {
 	#name : #ArrayMultiValuedDictionaryRootTest,
 	#superclass : #AbstractMultiValuedDictionaryRootTest,
-	#classTraits : 'TIncludesTest classTrait',
 	#category : #'MultiValuedDictionary-Tests'
 }
 
