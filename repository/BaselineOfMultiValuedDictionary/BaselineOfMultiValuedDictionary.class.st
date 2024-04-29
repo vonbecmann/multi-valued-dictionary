@@ -1,10 +1,10 @@
 Class {
 	#name : #BaselineOfMultiValuedDictionary,
 	#superclass : #BaselineOf,
-	#category : 'BaselineOfMultiValuedDictionary'
+	#category : #BaselineOfMultiValuedDictionary
 }
 
-{ #category : #baseline }
+{ #category : #baselines }
 BaselineOfMultiValuedDictionary >> baseline: spec [
 	<baseline>
 	spec
