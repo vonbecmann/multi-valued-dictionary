@@ -10,7 +10,7 @@ To install it do
 #+BEGIN_SRC
 Metacello new
    baseline: 'MultiValuedDictionary';
-   repository: 'github://vonbecmann/multi-valued-dictionary/repository';
+   repository: 'github://vonbecmann/multi-valued-dictionary:pharo12/repository';
    load.
 #+END_SRC
 
