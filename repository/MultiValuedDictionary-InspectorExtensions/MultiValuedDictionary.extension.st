@@ -1,6 +1,6 @@
-Extension { #name : #MultiValuedDictionary }
+Extension { #name : 'MultiValuedDictionary' }
 
-{ #category : #'*MultiValuedDictionary-InspectorExtensions' }
+{ #category : '*MultiValuedDictionary-InspectorExtensions' }
 MultiValuedDictionary class >> example [
 
 	<sampleInstance>
@@ -13,7 +13,7 @@ MultiValuedDictionary class >> example [
 		  yourself
 ]
 
-{ #category : #'*MultiValuedDictionary-InspectorExtensions' }
+{ #category : '*MultiValuedDictionary-InspectorExtensions' }
 MultiValuedDictionary class >> exampleAnother [
 
 	<sampleInstance>
@@ -25,34 +25,52 @@ MultiValuedDictionary class >> exampleAnother [
 		  yourself
 ]
 
-{ #category : #'*MultiValuedDictionary-InspectorExtensions' }
+{ #category : '*MultiValuedDictionary-InspectorExtensions' }
 MultiValuedDictionary >> inspectionItems: aBuilder [
 
 	<inspectorPresentationOrder: 0 title: 'Items'>
 	^ aBuilder newTable
-		  addColumn: (SpStringTableColumn title: 'Key' evaluated: [ :each | StObjectPrinter asTruncatedTextFrom: each key ]);
-		  addColumn: (SpStringTableColumn title: 'Value' evaluated: [ :each | StObjectPrinter asTruncatedTextFrom: each value ]);
-		  items: (self associations collect: [ :e | StInspectorAssociationNode hostObject: e ]);
+		  alternateRowsColor;
+		  addColumn: (SpStringTableColumn
+				   title: 'Key'
+				   evaluated: [ :each |
+					   StObjectPrinter asTruncatedTextFrom: each key ]);
+		  addColumn: (SpStringTableColumn
+				   title: 'Value'
+				   evaluated: [ :each |
+					   StObjectPrinter asTruncatedTextFrom: each value ]);
+		  items: (self associations collect: [ :e |
+					   StInspectorAssociationNode hostObject: e ]);
 		  yourself
 ]
 
-{ #category : #'*MultiValuedDictionary-InspectorExtensions' }
+{ #category : '*MultiValuedDictionary-InspectorExtensions' }
 MultiValuedDictionary >> inspectionKeyValues: aBuilder [
 
 	<inspectorPresentationOrder: 2 title: 'Key->Values'>
 	^ aBuilder newTable
-		  addColumn: (SpStringTableColumn title: 'Key' evaluated: [ :each | StObjectPrinter asTruncatedTextFrom: each key ]);
-		  addColumn: (SpStringTableColumn title: 'Value' evaluated: [ :each | StObjectPrinter asTruncatedTextFrom: each value ]);
+		  alternateRowsColor;
+		  addColumn: (SpStringTableColumn
+				   title: 'Key'
+				   evaluated: [ :each |
+					   StObjectPrinter asTruncatedTextFrom: each key ]);
+		  addColumn: (SpStringTableColumn
+				   title: 'Value'
+				   evaluated: [ :each |
+					   StObjectPrinter asTruncatedTextFrom: each value ]);
 		  items: dictionary associations;
 		  yourself
 ]
 
-{ #category : #'*MultiValuedDictionary-InspectorExtensions' }
+{ #category : '*MultiValuedDictionary-InspectorExtensions' }
 MultiValuedDictionary >> inspectionKeys: aBuilder [
 
 	<inspectorPresentationOrder: 1 title: 'Keys'>
 	^ aBuilder newTable
-		  addColumn: (SpStringTableColumn title: 'Key' evaluated: [ :each | StObjectPrinter asTruncatedTextFrom: each ]);
+		  alternateRowsColor;
+		  addColumn: (SpStringTableColumn
+				   title: 'Key'
+				   evaluated: [ :each | StObjectPrinter asTruncatedTextFrom: each ]);
 		  items: self keys;
 		  yourself
 ]

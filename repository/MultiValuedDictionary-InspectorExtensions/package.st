@@ -1,1 +1,1 @@
-Package { #name : #'MultiValuedDictionary-InspectorExtensions' }
+Package { #name : 'MultiValuedDictionary-InspectorExtensions' }
