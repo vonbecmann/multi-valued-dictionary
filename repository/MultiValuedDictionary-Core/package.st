@@ -1,1 +1,1 @@
-Package { #name : #'MultiValuedDictionary-Core' }
+Package { #name : 'MultiValuedDictionary-Core' }

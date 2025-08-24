@@ -3,34 +3,36 @@ a multi-valued dictionary backed up with an Array to hold the values at each key
 
 "
 Class {
-	#name : #ArrayMultiValuedDictionary,
-	#superclass : #Object,
+	#name : 'ArrayMultiValuedDictionary',
+	#superclass : 'Object',
 	#instVars : [
 		'dictionary'
 	],
-	#category : #'MultiValuedDictionary-Core-Public'
+	#category : 'MultiValuedDictionary-Core-Public',
+	#package : 'MultiValuedDictionary-Core',
+	#tag : 'Public'
 }
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ArrayMultiValuedDictionary class >> dictionary: aDictionaryClass [
 	" aDictionaryClass : a dictionary that holds the associations. "
 
 	^ self basicNew initializeDictionary: aDictionaryClass new
 ]
 
-{ #category : #'instance creation' }
+{ #category : 'instance creation' }
 ArrayMultiValuedDictionary class >> new [
 	self error: 'Use #dictionary:'
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 ArrayMultiValuedDictionary >> , aCollection [
 	^ self copy
 		addAll: aCollection;
 		yourself
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 ArrayMultiValuedDictionary >> = aMultiValuedDictionary [
 	self == aMultiValuedDictionary
 		ifTrue: [ ^ true ].
@@ -47,13 +49,13 @@ ArrayMultiValuedDictionary >> = aMultiValuedDictionary [
 	^ true
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 ArrayMultiValuedDictionary >> add: anAssociation [
 	self at: anAssociation key put: anAssociation value.
 	^ anAssociation
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 ArrayMultiValuedDictionary >> addAll: aKeyedCollection [
 	aKeyedCollection == self
 		ifFalse: [
@@ -61,7 +63,7 @@ ArrayMultiValuedDictionary >> addAll: aKeyedCollection [
 	^ aKeyedCollection
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> allSatisfy: aBlock [
 	"Evaluate aBlock with the elements of the receiver.
 	If aBlock returns false for any element return false.
@@ -71,7 +73,7 @@ ArrayMultiValuedDictionary >> allSatisfy: aBlock [
 	^ true
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> anyOne [
 	"Answer a representative sample of the receiver. This method can
 	be helpful when needing to preinfer the nature of the contents of
@@ -81,7 +83,7 @@ ArrayMultiValuedDictionary >> anyOne [
 	self valuesDo: [ :each | ^ each ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> anySatisfy: aBlock [
 	"Evaluate aBlock with the elements of the receiver.
 	If aBlock returns true for any element return true.
@@ -91,7 +93,7 @@ ArrayMultiValuedDictionary >> anySatisfy: aBlock [
 	^ false
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ArrayMultiValuedDictionary >> asArray [
 	"Answer an Array whose elements are the elements of the receiver.
 	Implementation note: Cannot use ''Array withAll: self'' as that only
@@ -105,14 +107,14 @@ ArrayMultiValuedDictionary >> asArray [
 	^ newArray
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ArrayMultiValuedDictionary >> asBag [
 	"Answer a Bag whose elements are the elements of the receiver."
 
 	^ Bag withAll: self
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ArrayMultiValuedDictionary >> asByteArray [
 	"Answer a ByteArray whose elements are the elements of the receiver.
 	Implementation note: Cannot use ''ByteArray withAll: self'' as that only
@@ -126,28 +128,28 @@ ArrayMultiValuedDictionary >> asByteArray [
 	^ array
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> asCommaString [
 	"Return collection printed as 'a, b, c' "
 
 	^ String streamContents: [ :s | self asStringOn: s delimiter: ', ' ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> asCommaStringAnd [
 	"Return collection printed as 'a, b and c' "
 
 	^ String streamContents: [ :s | self asStringOn: s delimiter: ', ' last: ' and ' ]
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ArrayMultiValuedDictionary >> asIdentitySet [
 	^ (IdentitySet new: self size)
 		addAll: self;
 		yourself
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ArrayMultiValuedDictionary >> asOrderedCollection [
 	"Answer an OrderedCollection whose elements are the elements of the
 	receiver. "
@@ -155,21 +157,21 @@ ArrayMultiValuedDictionary >> asOrderedCollection [
 	^ OrderedCollection withAll: self
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ArrayMultiValuedDictionary >> asSet [
 	"Answer a Set whose elements are the unique elements of the receiver."
 
 	^ Set withAll: self
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ArrayMultiValuedDictionary >> asSortedCollection [
 	"Answer a SortedCollection whose elements are the elements of the receiver. The sort order is the default less than or equal. Note that you should use #sorted: if you don't really need a SortedCollection, but a sorted collection."
 
 	^ SortedCollection withAll: self
 ]
 
-{ #category : #converting }
+{ #category : 'converting' }
 ArrayMultiValuedDictionary >> asSortedCollection: aSortBlock [
 	"Answer a SortedCollection whose elements are the elements of the receiver. The sort order is defined by the argument, aSortBlock. Note that this is better to use #sorted: if you don't really need a SortedCollection, but a sorted collection!!"
 
@@ -181,7 +183,7 @@ ArrayMultiValuedDictionary >> asSortedCollection: aSortBlock [
 		yourself
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> asStringOn: aStream delimiter: delimString [
 	"Print elements on a stream separated
 	with a delimiter String like: 'a, b, c'
@@ -192,7 +194,7 @@ ArrayMultiValuedDictionary >> asStringOn: aStream delimiter: delimString [
 		separatedBy: [ aStream nextPutAll: delimString ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> asStringOn: aStream delimiter: delimString last: lastDelimString [
 	"Print elements on a stream separated
 	with a delimiter between all the elements and with
@@ -216,12 +218,12 @@ ArrayMultiValuedDictionary >> asStringOn: aStream delimiter: delimString last: l
 						ifFalse: [ delimString ]) ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> associationAt: key [
 	^ dictionary associationAt: key ifAbsent: [ self errorKeyNotFound: key ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> associationAt: key ifAbsent: aBlock [
 	"Answer the association with the given key.
 	If key is not found, return the result of evaluating aBlock."
@@ -229,7 +231,7 @@ ArrayMultiValuedDictionary >> associationAt: key ifAbsent: aBlock [
 	^ dictionary associationAt: key ifAbsent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> associationAt: key ifPresent: aBlock [
 	"Answer the association with the given key.
 	If key is not found, return the result of evaluating aBlock."
@@ -237,7 +239,7 @@ ArrayMultiValuedDictionary >> associationAt: key ifPresent: aBlock [
 	^ dictionary associationAt: key ifPresent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> associationAt: key ifPresent: aPresentBlock ifAbsent: anAbsentBlock [
 	"Lookup the given key in the receiver. If it is present, answer the
 	value of evaluating the first block optionally with the association for the key.
@@ -246,7 +248,7 @@ ArrayMultiValuedDictionary >> associationAt: key ifPresent: aPresentBlock ifAbse
 	^ dictionary associationAt: key ifPresent: aPresentBlock ifAbsent: anAbsentBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> associations [
 	"Answer a Collection containing the receiver's associations."
 
@@ -255,7 +257,7 @@ ArrayMultiValuedDictionary >> associations [
 		streamContents: [ :stream | self associationsDo: [ :each | stream nextPut: each ] ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> associationsDo: aBlock [
 	"Evaluate aBlock for each of the receiver's elements (key/value
 	associations)."
@@ -266,7 +268,7 @@ ArrayMultiValuedDictionary >> associationsDo: aBlock [
 				association value do: [ :eachValue | aBlock value: association key -> eachValue ] ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> associationsSelect: aBlock [
 	"Evaluate aBlock with each of my associations as the argument. Collect
 	into a new dictionary, only those associations for which aBlock evaluates
@@ -282,14 +284,14 @@ ArrayMultiValuedDictionary >> associationsSelect: aBlock [
 	^ newCollection
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key [
 	"Answer the value associated with the key."
 
 	^ dictionary at: key
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key ifAbsent: aBlock [
 	"Answer the value associated with the key or, if key isn't found,
 	answer the result of evaluating aBlock."
@@ -297,7 +299,7 @@ ArrayMultiValuedDictionary >> at: key ifAbsent: aBlock [
 	^ dictionary at: key ifAbsent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key ifAbsentPut: aBlock [
 	"Return the value at the given key.
 	If key is not included in the receiver store the result
@@ -306,7 +308,7 @@ ArrayMultiValuedDictionary >> at: key ifAbsentPut: aBlock [
 	^ dictionary at: key ifAbsentPut: [ { aBlock value } ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key ifAbsentPutAll: aBlock [
 	"Return the value at the given key.
 	If key is not included in the receiver store the result
@@ -315,21 +317,21 @@ ArrayMultiValuedDictionary >> at: key ifAbsentPutAll: aBlock [
 	^ dictionary at: key ifAbsentPut: [ Array withAll: aBlock value ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key ifPresent: aBlock [
 	"Lookup the given key in the receiver. If it is present, answer the value of evaluating the given block with the values associated with the key. Otherwise, answer nil."
 
 	^ dictionary at: key ifPresent: aBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key ifPresent: oneArgBlock ifAbsent: absentBlock [
 	"Lookup the given key in the receiver. If it is present, answer the value of evaluating the oneArgBlock with the values associated with the key, otherwise answer the value of absentBlock."
 
 	^ dictionary at: key ifPresent: oneArgBlock ifAbsent: absentBlock
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key ifPresent: aPresentBlock ifAbsentPut: anAbsentBlock [
 	"Lookup the given key in the receiver. If it is present, answer the
 	value of evaluating the first block optionally with the value associated
@@ -343,7 +345,7 @@ ArrayMultiValuedDictionary >> at: key ifPresent: aPresentBlock ifAbsentPut: anAb
 		ifAbsentPut: [ { anAbsentBlock value } ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key put: anObject [
 	"Set the value at key to be anObject.  If key is not found, create a
 	new entry for key and set is value to anObject. Answer anObject."
@@ -359,7 +361,7 @@ ArrayMultiValuedDictionary >> at: key put: anObject [
 	^ anObject
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> at: key putAll: aCollection [
 	"Set the values at key to be aCollection.  If key is not found, create a
 	new entry for key and set its values to aCollection. Answer aCollection."
@@ -375,7 +377,7 @@ ArrayMultiValuedDictionary >> at: key putAll: aCollection [
 	^ aCollection
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> collect: aBlock [
 	"Evaluate aBlock with each of my values as the argument.  Collect the
 	resulting values into a collection that is like me. Answer with the new
@@ -391,7 +393,7 @@ ArrayMultiValuedDictionary >> collect: aBlock [
 	^ newCollection
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> collect: collectBlock thenDo: doBlock [
 	"Utility method to improve readability."
 
@@ -399,7 +401,7 @@ ArrayMultiValuedDictionary >> collect: collectBlock thenDo: doBlock [
 		associationsDo: [ :association | association value collect: collectBlock thenDo: doBlock ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> collect: collectBlock thenReject: rejectBlock [
 	"Utility method to improve readability."
 
@@ -415,7 +417,7 @@ ArrayMultiValuedDictionary >> collect: collectBlock thenReject: rejectBlock [
 	^ newCollection
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> collect: collectBlock thenSelect: selectBlock [
 	"Utility method to improve readability."
 
@@ -431,12 +433,12 @@ ArrayMultiValuedDictionary >> collect: collectBlock thenSelect: selectBlock [
 	^ newCollection
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 ArrayMultiValuedDictionary >> copyEmpty [
 	^ self class dictionary: self dictionaryClass
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 ArrayMultiValuedDictionary >> copyWith: newElement [
 	"Answer a new collection with newElement added."
 
@@ -445,7 +447,7 @@ ArrayMultiValuedDictionary >> copyWith: newElement [
 		yourself
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 ArrayMultiValuedDictionary >> copyWithoutAll: aCollection [
 	"Answer a copy of the receiver that does not contain any elements
 	equal to those in aCollection."
@@ -453,7 +455,7 @@ ArrayMultiValuedDictionary >> copyWithoutAll: aCollection [
 	^ self reject: [ :each | aCollection includes: each ]
 ]
 
-{ #category : #adding }
+{ #category : 'adding' }
 ArrayMultiValuedDictionary >> declare: key from: aDictionary [
 	"Add key to the receiver. If key already exists, do nothing. If aDictionary
 	includes key, then remove it from aDictionary and use its association as
@@ -468,7 +470,7 @@ ArrayMultiValuedDictionary >> declare: key from: aDictionary [
 		ifFalse: [ self at: key put: nil ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> detect: aBlock [
 	"Evaluate aBlock with each of the receiver's elements as the argument.
 	Answer the first element for which aBlock evaluates to true."
@@ -476,7 +478,7 @@ ArrayMultiValuedDictionary >> detect: aBlock [
 	^ self detect: aBlock ifNone: [ self errorNotFound: aBlock ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> detect: aBlock ifFound: foundBlock [
 	"Evaluate aBlock with each of the receiver's elements as the argument.
 	If some element evaluates aBlock to true, then cull this element into
@@ -492,7 +494,7 @@ ArrayMultiValuedDictionary >> detect: aBlock ifFound: foundBlock [
 			 ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> detect: aBlock ifFound: foundBlock ifNone: exceptionBlock [
 	"Evaluate aBlock with each of the receiver's elements as the argument.
 	If some element evaluates aBlock to true, then cull this element into
@@ -506,7 +508,7 @@ ArrayMultiValuedDictionary >> detect: aBlock ifFound: foundBlock ifNone: excepti
 	^ exceptionBlock value
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> detect: aBlock ifNone: exceptionBlock [
 	"Evaluate aBlock with each of the receiver's elements as the argument.
 	Answer the first element for which aBlock evaluates to true. If none
@@ -515,12 +517,12 @@ ArrayMultiValuedDictionary >> detect: aBlock ifNone: exceptionBlock [
 	^ self detect: aBlock ifFound: [ :element | element ] ifNone: exceptionBlock
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ArrayMultiValuedDictionary >> dictionaryClass [
 	^ dictionary class
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> difference: aCollection [
 	"Answer the set theoretic difference of two collections. This is a specialized version for Dictionaries keeping the keys of the objects. At a slightly higher price of an additional Set to track duplicates."
 
@@ -534,7 +536,7 @@ ArrayMultiValuedDictionary >> difference: aCollection [
 				ifFalse: [ false ] ]
 ]
 
-{ #category : #displaying }
+{ #category : 'displaying' }
 ArrayMultiValuedDictionary >> displayStringOn: s [
 
 	self printNameOn: s.
@@ -550,14 +552,14 @@ ArrayMultiValuedDictionary >> displayStringOn: s [
 	self printElementsOn: s
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> do: aBlock [
 	"Evaluate aBlock with each of the receiver's elements as the argument."
 
 	self valuesDo: aBlock
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> do: elementBlock separatedBy: separatorBlock [
 	"Evaluate the elementBlock for all elements in the receiver,
 	and evaluate the separatorBlock between."
@@ -572,7 +574,7 @@ ArrayMultiValuedDictionary >> do: elementBlock separatedBy: separatorBlock [
 			elementBlock value: each ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> do: aBlock without: anItem [
 	"Enumerate all elements in the receiver.
 	Execute aBlock for those elements that are not equal to the given item"
@@ -580,41 +582,41 @@ ArrayMultiValuedDictionary >> do: aBlock without: anItem [
 	self valuesDo: [ :each | anItem = each ifFalse: [ aBlock value: each ] ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ArrayMultiValuedDictionary >> emptyCheck [
 	self ifEmpty: [ self errorEmptyCollection ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ArrayMultiValuedDictionary >> errorEmptyCollection [
 	"Signal a CollectionIsEmpty exception"
 
 	CollectionIsEmpty signalWith: self
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ArrayMultiValuedDictionary >> errorKeyNotFound: aKey [
 	KeyNotFound signalFor: aKey
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ArrayMultiValuedDictionary >> errorNotFound: anObject [
 	"Raise a NotFound exception."
 
 	NotFound signalFor: anObject
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ArrayMultiValuedDictionary >> errorValueNotFound: value [
 	ValueNotFound signalFor: value
 ]
 
-{ #category : #comparing }
+{ #category : 'comparing' }
 ArrayMultiValuedDictionary >> hash [
 	^ (self class hash + dictionary hash) hashMultiply
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> identityIncludes: anObject [
 	"Answer whether anObject is one of the receiver's elements."
 
@@ -622,7 +624,7 @@ ArrayMultiValuedDictionary >> identityIncludes: anObject [
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> ifEmpty: aBlock [
 	"Evaluate the given block with the receiver as argument, answering its value if the receiver is empty, otherwise answer the receiver."
 
@@ -633,7 +635,7 @@ ArrayMultiValuedDictionary >> ifEmpty: aBlock [
 		ifFalse: [ self ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> ifEmpty: emptyBlock ifNotEmpty: notEmptyBlock [
 	"Evaluate emptyBlock if I'm empty, notEmptyBlock otherwise"
 
@@ -644,7 +646,7 @@ ArrayMultiValuedDictionary >> ifEmpty: emptyBlock ifNotEmpty: notEmptyBlock [
 		ifFalse: [ notEmptyBlock cull: self ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> ifNotEmpty: aBlock [
 	"Evaluate the given block with the receiver as argument, answering its value
     unless the receiver is empty, in which case answer the receiver.
@@ -658,7 +660,7 @@ ArrayMultiValuedDictionary >> ifNotEmpty: aBlock [
 		ifFalse: [ aBlock cull: self ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> ifNotEmpty: notEmptyBlock ifEmpty: emptyBlock [
 	"Evaluate emptyBlock if I'm empty, notEmptyBlock otherwise
 	 If the notEmptyBlock has an argument, eval with the receiver as its argument"
@@ -668,32 +670,32 @@ ArrayMultiValuedDictionary >> ifNotEmpty: notEmptyBlock ifEmpty: emptyBlock [
 		ifFalse: [ notEmptyBlock cull: self ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> includes: anObject [
 	self valuesDo: [ :each | anObject = each ifTrue: [ ^ true ] ].
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> includesAll: aCollection [
 	"Answer whether all the elements of aCollection are in the receiver."
 
 	^ aCollection allSatisfy: [ :elem | self includes: elem ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> includesAny: aCollection [
 	"Answer whether any element of aCollection is one of the receiver's elements."
 
 	^ aCollection anySatisfy: [ :elem | self includes: elem ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> includesAssociation: anAssociation [
 	^ (dictionary associationAt: anAssociation key ifAbsent: [ ^ false ]) value includes: anAssociation value
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> includesIdentity: anObject [
 	"Answer whether anObject is one of the values of the receiver.  Contrast #includes: in which there is only an equality check, here there is an identity check"
 
@@ -701,20 +703,20 @@ ArrayMultiValuedDictionary >> includesIdentity: anObject [
 	^ false
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> includesKey: key [
 	"Answer whether the receiver has a key equal to the argument, key."
 
 	^ dictionary includesKey: key
 ]
 
-{ #category : #initialization }
+{ #category : 'initialization' }
 ArrayMultiValuedDictionary >> initializeDictionary: aDictionary [
 	self initialize.
 	dictionary := aDictionary
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> inject: thisValue into: binaryBlock [
 	"Accumulate a running value associated with evaluating the argument,
 	binaryBlock, with the current value of the argument, thisValue, and the
@@ -728,7 +730,7 @@ ArrayMultiValuedDictionary >> inject: thisValue into: binaryBlock [
 	^ nextValue
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> intersection: aCollection [
 	"Answer the set theoretic intersection of two collections."
 
@@ -742,38 +744,38 @@ ArrayMultiValuedDictionary >> intersection: aCollection [
 				ifFalse: [ false ] ]
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> isCollection [
 	"Return true if the receiver is some sort of Collection and responds to basic collection messages such as #size and #do:"
 
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> isDictionary [
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> isEmpty [
 	^ dictionary isEmpty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> isEmptyOrNil [
 	"Answer whether the receiver contains any elements, or is nil.  Useful in numerous situations where one wishes the same reaction to an empty collection or to nil"
 
 	^ self isEmpty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> isNotEmpty [
 	"Answer whether the receiver contains any elements."
 
 	^ dictionary isNotEmpty
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> keyAtIdentityValue: value [
 	"Answer the key that is the external name for the argument, value. If
 	there is none, answer nil.
@@ -782,7 +784,7 @@ ArrayMultiValuedDictionary >> keyAtIdentityValue: value [
 	^ self keyAtIdentityValue: value ifAbsent: [ self errorValueNotFound: value ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> keyAtIdentityValue: value ifAbsent: exceptionBlock [
 	"Answer the key that is the external name for the argument, value. If
 	there is none, answer the result of evaluating exceptionBlock.
@@ -797,7 +799,7 @@ ArrayMultiValuedDictionary >> keyAtIdentityValue: value ifAbsent: exceptionBlock
 	^ exceptionBlock value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> keyAtValue: value [
 	"Answer the key that is the external name for the argument, value. If
 	there is none, signal an error."
@@ -805,7 +807,7 @@ ArrayMultiValuedDictionary >> keyAtValue: value [
 	^ self keyAtValue: value ifAbsent: [ self errorValueNotFound: value ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> keyAtValue: value ifAbsent: exceptionBlock [
 	"Answer the key that is the external name for the argument, value. If
 	there is none, answer the result of evaluating exceptionBlock.
@@ -820,21 +822,21 @@ ArrayMultiValuedDictionary >> keyAtValue: value ifAbsent: exceptionBlock [
 	^ exceptionBlock value
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> keys [
 	"Answer an Array containing the receiver's keys."
 
 	^ dictionary keys
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> keysAndValuesDo: aBlock [
 	"Enumerate the receiver with all the keys and values."
 
 	self associationsDo: [ :assoc | aBlock value: assoc key value: assoc value ]
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 ArrayMultiValuedDictionary >> keysAndValuesRemove: keyValueBlock [
 	"Removes all entries for which keyValueBlock returns true."
 
@@ -843,21 +845,21 @@ ArrayMultiValuedDictionary >> keysAndValuesRemove: keyValueBlock [
 	self shouldNotImplement
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> keysDo: aBlock [
 	"Evaluate aBlock for each of the receiver's keys."
 
 	dictionary associationsDo: [ :association | aBlock value: association key ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> keysSortedSafely [
 	"Answer an Array containing the receiver's keys."
 
 	^ dictionary keysSortedSafely
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> noneSatisfy: aBlock [
 	"Evaluate aBlock with the elements of the receiver.
 	If aBlock returns false for all elements return true.
@@ -867,7 +869,7 @@ ArrayMultiValuedDictionary >> noneSatisfy: aBlock [
 	^ true
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> notEmpty [
 	"Answer whether the receiver contains any elements."
 
@@ -876,7 +878,7 @@ ArrayMultiValuedDictionary >> notEmpty [
 	^ self isNotEmpty
 ]
 
-{ #category : #testing }
+{ #category : 'testing' }
 ArrayMultiValuedDictionary >> occurrencesOf: anObject [
 	"Answer how many of the receiver's elements are equal to anObject."
 
@@ -886,7 +888,7 @@ ArrayMultiValuedDictionary >> occurrencesOf: anObject [
 	^ tally
 ]
 
-{ #category : #copying }
+{ #category : 'copying' }
 ArrayMultiValuedDictionary >> postCopy [
 	| newDict |
 	newDict := self dictionaryClass new.
@@ -894,7 +896,7 @@ ArrayMultiValuedDictionary >> postCopy [
 	dictionary := newDict
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> printElementsOn: aStream [
 	aStream nextPut: $(.
 	self size > 100
@@ -912,14 +914,14 @@ ArrayMultiValuedDictionary >> printElementsOn: aStream [
 	aStream nextPut: $)
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> printNameOn: aStream [
 	aStream
 		nextPutAll: 'an ';
 		nextPutAll: self class name
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> printOn: aStream [
 	"Append a sequence of characters that identify the receiver to aStream."
 
@@ -928,7 +930,7 @@ ArrayMultiValuedDictionary >> printOn: aStream [
 		printElementsOn: aStream
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> printOn: aStream delimiter: delimString [
 	"Print elements on a stream separated
 	with a delimiter String like: 'a, b, c' "
@@ -938,7 +940,7 @@ ArrayMultiValuedDictionary >> printOn: aStream delimiter: delimString [
 		separatedBy: [ aStream nextPutAll: delimString ]
 ]
 
-{ #category : #printing }
+{ #category : 'printing' }
 ArrayMultiValuedDictionary >> printOn: aStream delimiter: delimString last: lastDelimString [
 	"Print elements on a stream separated
 	with a delimiter between all the elements and with
@@ -959,12 +961,12 @@ ArrayMultiValuedDictionary >> printOn: aStream delimiter: delimString last: last
 				ifFalse: [ aStream nextPutAll: delimString ] ]
 ]
 
-{ #category : #private }
+{ #category : 'private' }
 ArrayMultiValuedDictionary >> privateAt: key put: anObject [
 	dictionary at: key put: anObject
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> reject: aBlock [
 	"Evaluate aBlock with each of the receiver's elements as the argument.
 	Collect into a new collection like the receiver only those elements for
@@ -982,7 +984,7 @@ ArrayMultiValuedDictionary >> reject: aBlock [
 	^ newCollection
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> reject: rejectBlock thenCollect: collectBlock [
 	"Utility method to improve readability."
 
@@ -998,7 +1000,7 @@ ArrayMultiValuedDictionary >> reject: rejectBlock thenCollect: collectBlock [
 	^ newCollection
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> reject: rejectBlock thenDo: doBlock [
 	"Utility method to improve readability."
 
@@ -1009,22 +1011,22 @@ ArrayMultiValuedDictionary >> reject: rejectBlock thenDo: doBlock [
 		associationsDo: [ :association | association value reject: rejectBlock thenDo: doBlock ]
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 ArrayMultiValuedDictionary >> remove: anObject [
 	self shouldNotImplement
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 ArrayMultiValuedDictionary >> remove: anObject ifAbsent: exceptionBlock [
 	self shouldNotImplement
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 ArrayMultiValuedDictionary >> removeAll [
 	dictionary removeAll
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 ArrayMultiValuedDictionary >> removeKey: key [
 	"Remove key from the receiver.
 	If key is not in the receiver, notify an error."
@@ -1032,7 +1034,7 @@ ArrayMultiValuedDictionary >> removeKey: key [
 	^ dictionary removeKey: key ifAbsent: [ self errorKeyNotFound: key ]
 ]
 
-{ #category : #removing }
+{ #category : 'removing' }
 ArrayMultiValuedDictionary >> removeKey: key ifAbsent: aBlock [
 	"Remove key (and its associated value) from the receiver. If key is not in
 	the receiver, answer the result of evaluating aBlock. Otherwise, answer
@@ -1041,7 +1043,7 @@ ArrayMultiValuedDictionary >> removeKey: key ifAbsent: aBlock [
 	^ dictionary removeKey: key ifAbsent: aBlock
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> select: aBlock [
 	"Evaluate aBlock with each of my values as the argument. Collect into a new dictionary, only those associations for which aBlock evaluates to true."
 
@@ -1055,7 +1057,7 @@ ArrayMultiValuedDictionary >> select: aBlock [
 	^ newCollection
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> select: selectBlock thenCollect: collectBlock [
 	"Utility method to improve readability."
 
@@ -1071,7 +1073,7 @@ ArrayMultiValuedDictionary >> select: selectBlock thenCollect: collectBlock [
 	^ newCollection
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> select: selectBlock thenDo: doBlock [
 	"Utility method to improve readability.
 	Do not create the intermediate collection."
@@ -1080,7 +1082,7 @@ ArrayMultiValuedDictionary >> select: selectBlock thenDo: doBlock [
 		associationsDo: [ :association | association value select: selectBlock thenDo: doBlock ]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> size [
 	"Answer how many elements the receiver contains."
 
@@ -1090,7 +1092,7 @@ ArrayMultiValuedDictionary >> size [
 	^ tally
 ]
 
-{ #category : #'math functions' }
+{ #category : 'math functions' }
 ArrayMultiValuedDictionary >> sumNumbers: aBlock [
 	"This is implemented using a variant of the normal inject:into: pattern
 	that is specific to handling numbers. aBlock is expected to return a number
@@ -1105,7 +1107,7 @@ ArrayMultiValuedDictionary >> sumNumbers: aBlock [
 		into: [ :sum :each |  sum + (aBlock value: each) ]
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> union: aCollection [
 	"Answer the set theoretic union of the receiver and aCollection, using the receiver's notion of equality and not side effecting the receiver at all."
 
@@ -1114,7 +1116,7 @@ ArrayMultiValuedDictionary >> union: aCollection [
 		yourself
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 ArrayMultiValuedDictionary >> values [
 	"Answer a Collection containing the receiver's values."
 
@@ -1125,7 +1127,7 @@ ArrayMultiValuedDictionary >> values [
 	^ newArray
 ]
 
-{ #category : #enumerating }
+{ #category : 'enumerating' }
 ArrayMultiValuedDictionary >> valuesDo: aBlock [
 	"Evaluate aBlock for each of the receiver's values."
 
